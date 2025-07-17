@@ -1,4 +1,5 @@
 import MusicTags as MT
+import JSONParse as JSParse
 
 while True:
     choose = int(input("\n1 - да\n~$ "))
@@ -10,4 +11,7 @@ while True:
             MT.fromRawMp3ToClean(dir_from, dir_to)
         case 2:
             print("Поки!")
+            break
+        case 3:
+            JSParse.printData("data.json")
             break

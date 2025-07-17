@@ -7,15 +7,16 @@ from pydub import AudioSegment
 from io import BufferedReader
 from base64 import b64encode
 from pathlib import Path
+import acoustid
 import subprocess
 import os
 
 tags_to_edit = {
-    'title': ["Рустем\u200B"],
-    'artist': ["Валентин Стрыкало\u200B"],
-    'album': ['Смирись и расслабься!\u200B'],
-    'date': ['2012'],
-    'genre': ['Панк-рок, камеди-рок, альтернативный рок, поп-панк']
+    'title': "Рустем\u200B",
+    'artist': "Валентин Стрыкало\u200B",
+    'album': "Смирись и расслабься!\u200B",
+    'date': 2012,
+    'genre': "Панк-рок, камеди-рок, альтернативный рок, поп-панк"
 }
 
 def encodeWithFfmpeg(input_file, output_file, cover_path=None):
@@ -55,6 +56,8 @@ def editOpusTags(input_dir, audioname, tags_to_edit):
 
 def editMp3Tags(input_dir, audioname, tags_to_edit):
     audio = EasyID3(input_dir + audioname)
+    # duration, fingerprint = acoustid.fingerprint_file(audio)
+
     for tag_name, tag_value in tags_to_edit.items():
         audio[tag_name] = tag_value
     audio.save()
@@ -82,10 +85,14 @@ def fromRawMp3ToClean(dir_from, dir_to):
     for file in files:
         audio = AudioSegment.from_mp3(f"{dir_from}/{file}")
         audio.export(f"{dir_to}/{file.replace('.mp3', '')}_clean.mp3", format="mp3")
-        editMp3Tags(f"{dir_to}/" , f"{file.replace('.mp3', '')}_clean.mp3", tags_to_edit)
-
+        editMp3Tags(f"{dir_to}/" , f"{file.replace(".mp3", "")}_clean.mp3", tags_to_edit)
         clean_name = f"{file.replace('.mp3', '')}_clean.mp3"
-        encodeWithFfmpeg(
-            input_file=f"{dir_to}/{clean_name}",
-            output_file=f"{dir_to}/{file.replace('.mp3', '')}_processed.mp3",
+        try:
+            newName = os.rename(f"{dir_to}/{clean_name}", f"{dir_to}/{tags_to_edit['title']} - {tags_to_edit['artist']}.mp3")
+            encodeWithFfmpeg(
+            input_file=f"{dir_to}/{newName}",
+            output_file=f"{dir_to}/{newName}",
         )
+        except Exception as e:
+            print(f"Error: {e}")
+        
