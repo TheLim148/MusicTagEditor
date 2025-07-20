@@ -37,7 +37,19 @@ async def get_musicbrainz_data(recording_id):
             response = await client.get(url, params=params, headers=headers)
             response.raise_for_status()
             data = response.json()
-            return data
+            results = []
+            for release in data.get("releases", []):
+                for artist in release.get("artist_credit", []):
+                    results.append({
+                        "release_id": release.get("id", ""),
+                        "album_title": release.get("title", ""),
+                        "year": release.get("date".split("-", [0]), ""),
+                        "artist_name": artist.get("name", ""),
+                        "tags": release.get("tags", []),
+                        "length": data.get("length", 0),
+                        "song_title": data.get("title", "")
+                    })
+            return results
         except httpx.HTTPStatusError as e:
             return {"error": "HTTP error", "details": repr(e)}
         except httpx.RequestError as e:
@@ -64,23 +76,21 @@ async def get_track_number_in_release(release_id, recording_id):
             response = await client.get(url, params=params, headers=headers)
             response.raise_for_status()
             data = response.json()
-            return data
-            # for medium in data.get("media", []):
-            #     for track in medium.get("tracks", []):
-            #         if track["recording"]["id"] == recording_id:
-            #             return {
-            #                 "track_number": track["number"],
-            #                 "track_title": track["title"],
-            #                 "medium_title": medium.get("title", "Unknown Medium"),
-            #                 "release_id": release_id
-            #             }
-
-            # return {"error": "Track not found in release"}
+            for medium in data.get("media", []):
+                for track in medium.get("tracks", []):
+                    if track["recording"]["id"] == recording_id:
+                        return {
+                            "track_number": track["number"],
+                            "track_title": track["title"],
+                            "medium_title": medium.get("title", "Unknown Medium"),
+                            "release_id": release_id
+                        }
+            return {"error": "Track not found in release"}
 
         except httpx.HTTPStatusError as e:
-            return {"error": "HTTP error", "details": str(e)}
+            return {"error": "HTTP error", "details": repr(e)}
         except httpx.RequestError as e:
-            return {"error": "Request error", "details": str(e)}
+            return {"error": "Request error", "details": repr(e)}
 
 API_KEY = "hv3SsHefpw"
 USER_API_KEY = "FnlllFTowF"
@@ -100,16 +110,10 @@ JSON_TEMPLATE = '''
                 }
             ]
 '''
-
-    # for score, recording_id, title, artist in acoustid.match(API_KEY, os.path.join("testFolder", "1.mp3")):
-    #     print(f"\n{score}, {recording_id}, {title}, {artist}")
+# for score, recording_id, title, artist in acoustid.match(API_KEY, os.path.join("testFolder", "1.mp3")):
+#     print(f"\n{score}, {recording_id}, {title}, {artist}")
 
 # duration, fingerprint = acoustid.fingerprint_file("testFolder\\1​.mp3")
-
-# dataa = acoustid.lookup(API_KEY, fingerprint, duration)
-# print(dataa)
-
-# print(duration, fingerprint)
 
 def printData(dataFile):
     with open(dataFile, "r", encoding="utf-8") as f:
@@ -142,16 +146,23 @@ def writeToData(dataFile, foo):
         json.dump(data, foo, indent=2)
 
 async def main():
-    recording_id = "200f0b3f-5001-4b86-a95d-75bec48c293b"
-
-    release_id = "0a91eab7-f566-4dd2-93b9-8b69a3f0f891"
+    match = next(acoustid.match(API_KEY, os.path.join("testFolder", "1.mp3")), "")
+    if match:
+        score, recording_id, title, artist = match
+    else:
+        raise ValueError("Совпадений не найдено")
+    
+    result = await get_musicbrainz_data(recording_id)
+    if result is None:
+        raise ValueError("Не удалось получить данные")
+    
+    release_id = result[0]["release_id"] if result else ""
     result1 = await get_track_number_in_release(release_id, recording_id)
 
-    result = await get_musicbrainz_data(recording_id)
-    with open("trackInfo.json", "w", encoding="utf-8") as f:
+    with open("trackInfo1.json", "w", encoding="utf-8") as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
 
-    with open("albumInfo.json", "w", encoding="utf-8") as f:
+    with open("albumInfo1.json", "w", encoding="utf-8") as f:
         json.dump(result1, f, indent=2, ensure_ascii=False)
 
     print(result)
@@ -170,3 +181,7 @@ if __name__ == "__main__":
         time.sleep(5)
     
     asyncio.run(main())
+
+# recording_ids = list(acoustid.match(API_KEY, os.path.join("testFolder", "1.mp3")))
+# recording_id = "200f0b3f-5001-4b86-a95d-75bec48c293b"
+# release_id = "0a91eab7-f566-4dd2-93b9-8b69a3f0f891"
