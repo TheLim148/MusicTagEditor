@@ -86,7 +86,7 @@ def isTorRunning(host="127.0.0.1", port=9050):
             return False
 
 def clear_terminal():
-    subprocess.call(["cls"])
+    print('\033[2J\033[H', end='')
 
 def parse_track_info(data):
     if "releases" not in data or not data["releases"]:
@@ -207,9 +207,6 @@ async def main():
             send_newnym()
             print("Перезапуск цепочки... подождите 3 секунды")
             await asyncio.sleep(3)
-
-    if attempts == max_attempts:
-        raise ValueError("Не удалось получить данные")
     
     release_id = result[0]["release_id"]
     result1 = await get_track_number_in_release(release_id, recording_id)
@@ -223,7 +220,8 @@ async def main():
     print(result)
 
 if __name__ == "__main__":
-    # clear_terminal()
+    clear_terminal()
+    
     if isTorRunning():
         print("Tor is already runnig")
     else:
