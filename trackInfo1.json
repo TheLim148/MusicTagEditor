@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "release_id": "0a91eab7-f566-4dd2-93b9-8b69a3f0f891",
+    "album_title": "Смирись и расслабься",
+    "year": "2012",
+    "artist_name": "Валентин Стрыкало",
+    "tags": [],
+    "length": 211720,
+    "song_title": "Рустем"
+  },
+  {
+    "release_id": "e8abb752-d176-49a0-bfe5-0281251d1554",
+    "album_title": "Смирись и расслабься!",
+    "year": "2012",
+    "artist_name": "Валентин Стрыкало",
+    "tags": [],
+    "length": 211720,
+    "song_title": "Рустем"
+  }
+]

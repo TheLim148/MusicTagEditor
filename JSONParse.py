@@ -95,16 +95,17 @@ def parse_track_info(data):
     results = []
     
     for release in data.get("releases", []):
-        for artist in release.get("artist_credit", []):
-            results.append({
-                "release_id": release.get("id", ""),
-                "album_title": release.get("title", ""),
-                "year": release.get("date".split("-", [0]), ""),
-                "artist_name": artist.get("name", ""),
-                "tags": release.get("tags", []),
-                "length": data.get("length", 0),
-                "song_title": data.get("title", "")
-            })
+        for artist in release.get("artist-credit", []):
+            if release.get("status") == "Official":
+                results.append({
+                    "release_id": release.get("id", ""),
+                    "album_title": release.get("title", ""),
+                    "year": release.get("date", "").split("-")[0],
+                    "artist_name": artist.get("name", ""),
+                    "tags": release.get("tags", []),
+                    "length": data.get("length", 0),
+                    "song_title": data.get("title", "")
+                })
     return results
 
 # def parse_album_info(data):
@@ -130,8 +131,7 @@ async def get_musicbrainz_data(recording_id):
             response = await client.get(url, params=params, headers=headers)
             response.raise_for_status()
             data = response.json()
-            return data
-            # parse_track_info(data)
+            return parse_track_info(data)
         except httpx.HTTPStatusError as e:
             return {"error": "HTTP error", "details": repr(e)}
         except httpx.RequestError as e:
@@ -191,24 +191,28 @@ async def main():
     
     while attempts < max_attempts:
         result = await get_musicbrainz_data(recording_id)
-        if result and result.get("releases"):
-            break
         
-        attempts += 1
-        print(f"Попытка {attempts}/{max_attempts} | {result}")
-        await asyncio.sleep(1)
-    
-        if attempts % 3 == 0:
-            newnym_attempts += 1
+        if isinstance(result, dict) and "error" in result:
+            attempts += 1
+            print(f"Попытка {attempts}/{max_attempts} | {result}")
+            await asyncio.sleep(1)
 
-            if newnym_attempts > max_newnym_retries:
-                raise ValueError("Не удалось получить данные после смены цепочки")
-            
-            send_newnym()
-            print("Перезапуск цепочки... подождите 3 секунды")
-            await asyncio.sleep(3)
+            if attempts % 3 == 0:
+                newnym_attempts += 1
+
+                if newnym_attempts > max_newnym_retries:
+                    raise ValueError("Не удалось получить данные после смены цепочки")
+
+                send_newnym()
+                print("Перезапуск цепочки... подождите 3 секунды")
+                await asyncio.sleep(3)
+
+            continue
+
+        if isinstance(result, list) and result:
+            release_id = result[0]["release_id"]
+            break
     
-    release_id = result[0]["release_id"]
     result1 = await get_track_number_in_release(release_id, recording_id)
 
     with open("trackInfo1.json", "w", encoding="utf-8") as f:

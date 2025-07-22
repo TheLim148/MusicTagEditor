@@ -1,44 +1,37 @@
-[2025-07-21 17:57:58,466] DEBUG - Using proactor: IocpProactor
-[2025-07-21 17:57:58,565] DEBUG - Starting new HTTP connection (1): api.acoustid.org:80
-[2025-07-21 17:57:58,872] DEBUG - http://api.acoustid.org:80 "POST /v2/lookup HTTP/1.1" 200 None
-[2025-07-21 17:57:59,228] DEBUG - connect_tcp.started host='127.0.0.1' port=9050 timeout=15
-[2025-07-21 17:57:59,228] DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000002608E4ADB80>
-[2025-07-21 17:57:59,228] DEBUG - setup_socks5_connection.started stream=<httpcore._backends.anyio.AnyIOStream object at 0x000002608E4ADB80> host='musicbrainz.org' port=443 auth=None
-[2025-07-21 17:57:59,434] DEBUG - setup_socks5_connection.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000002608E4ADB80>
-[2025-07-21 17:57:59,434] DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000002608F2F28D0> server_hostname='musicbrainz.org' timeout=15
-[2025-07-21 17:57:59,464] DEBUG - start_tls.failed exception=ConnectError(EndOfStream())
-[2025-07-21 17:58:00,683] DEBUG - connect_tcp.started host='127.0.0.1' port=9050 timeout=15
-[2025-07-21 17:58:00,683] DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000002608F363A70>
-[2025-07-21 17:58:00,683] DEBUG - setup_socks5_connection.started stream=<httpcore._backends.anyio.AnyIOStream object at 0x000002608F363A70> host='musicbrainz.org' port=443 auth=None
-[2025-07-21 17:58:00,816] DEBUG - setup_socks5_connection.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000002608F363A70>
-[2025-07-21 17:58:00,816] DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000002608F3887D0> server_hostname='musicbrainz.org' timeout=15
-[2025-07-21 17:58:00,903] DEBUG - start_tls.failed exception=ConnectError(EndOfStream())
-[2025-07-21 17:58:02,129] DEBUG - connect_tcp.started host='127.0.0.1' port=9050 timeout=15
-[2025-07-21 17:58:02,129] DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000002608F3A0F80>
-[2025-07-21 17:58:02,129] DEBUG - setup_socks5_connection.started stream=<httpcore._backends.anyio.AnyIOStream object at 0x000002608F3A0F80> host='musicbrainz.org' port=443 auth=None
-[2025-07-21 17:58:02,286] DEBUG - setup_socks5_connection.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000002608F3A0F80>
-[2025-07-21 17:58:02,286] DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000002608F388E50> server_hostname='musicbrainz.org' timeout=15
-[2025-07-21 17:58:02,372] DEBUG - start_tls.failed exception=ConnectError(EndOfStream())
-[2025-07-21 17:58:06,598] DEBUG - connect_tcp.started host='127.0.0.1' port=9050 timeout=15
-[2025-07-21 17:58:06,598] DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000002608BABCB60>
-[2025-07-21 17:58:06,598] DEBUG - setup_socks5_connection.started stream=<httpcore._backends.anyio.AnyIOStream object at 0x000002608BABCB60> host='musicbrainz.org' port=443 auth=None
-[2025-07-21 17:58:07,262] DEBUG - setup_socks5_connection.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000002608BABCB60>
-[2025-07-21 17:58:07,263] DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000002608F389650> server_hostname='musicbrainz.org' timeout=15
-[2025-07-21 17:58:07,409] DEBUG - start_tls.failed exception=ConnectError(EndOfStream())
-[2025-07-21 17:58:08,634] DEBUG - connect_tcp.started host='127.0.0.1' port=9050 timeout=15
-[2025-07-21 17:58:08,634] DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000002608F363C20>
-[2025-07-21 17:58:08,634] DEBUG - setup_socks5_connection.started stream=<httpcore._backends.anyio.AnyIOStream object at 0x000002608F363C20> host='musicbrainz.org' port=443 auth=None
-[2025-07-21 17:58:08,807] DEBUG - setup_socks5_connection.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000002608F363C20>
-[2025-07-21 17:58:08,807] DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000002608F3897D0> server_hostname='musicbrainz.org' timeout=15
-[2025-07-21 17:58:09,005] DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000002608F363B30>
-[2025-07-21 17:58:09,005] DEBUG - send_request_headers.started request=<Request [b'GET']>
-[2025-07-21 17:58:09,014] DEBUG - send_request_headers.complete
-[2025-07-21 17:58:09,014] DEBUG - send_request_body.started request=<Request [b'GET']>
-[2025-07-21 17:58:09,014] DEBUG - send_request_body.complete
-[2025-07-21 17:58:09,014] DEBUG - receive_response_headers.started request=<Request [b'GET']>
-[2025-07-21 17:58:09,237] DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 21 Jul 2025 14:58:09 GMT'), (b'Content-Type', b'application/json; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Keep-Alive', b'timeout=15'), (b'Vary', b'Accept-Encoding'), (b'X-RateLimit-Limit', b'1200'), (b'X-RateLimit-Remaining', b'987'), (b'X-RateLimit-Reset', b'1753109890'), (b'Server', b'Plack::Handler::Starlet'), (b'ETag', b'W/"053fcc91f55f464b6bf5f2373701c1ce"'), (b'Access-Control-Allow-Origin', b'*'), (b'X-Runtime', b'0.038560'), (b'X-Cache-Status', b'STALE'), (b'Content-Encoding', b'gzip')])
-[2025-07-21 17:58:09,237] INFO - HTTP Request: GET https://musicbrainz.org/ws/2/recording/200f0b3f-5001-4b86-a95d-75bec48c293b?inc=artists%2Breleases%2Btags&fmt=json "HTTP/1.1 200 OK"
-[2025-07-21 17:58:09,237] DEBUG - receive_response_body.started request=<Request [b'GET']>
-[2025-07-21 17:58:09,237] DEBUG - receive_response_body.complete
-[2025-07-21 17:58:09,237] DEBUG - response_closed.started
-[2025-07-21 17:58:09,237] DEBUG - response_closed.complete
+[2025-07-22 23:19:55,724] DEBUG - Using proactor: IocpProactor
+[2025-07-22 23:19:55,814] DEBUG - Starting new HTTP connection (1): api.acoustid.org:80
+[2025-07-22 23:19:56,074] DEBUG - http://api.acoustid.org:80 "POST /v2/lookup HTTP/1.1" 200 None
+[2025-07-22 23:19:56,444] DEBUG - connect_tcp.started host='127.0.0.1' port=9050 timeout=15
+[2025-07-22 23:19:56,444] DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000001C4DAE7DF10>
+[2025-07-22 23:19:56,444] DEBUG - setup_socks5_connection.started stream=<httpcore._backends.anyio.AnyIOStream object at 0x000001C4DAE7DF10> host='musicbrainz.org' port=443 auth=None
+[2025-07-22 23:19:56,925] DEBUG - setup_socks5_connection.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000001C4DAE7DF10>
+[2025-07-22 23:19:56,925] DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001C4DAE428D0> server_hostname='musicbrainz.org' timeout=15
+[2025-07-22 23:19:57,414] DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000001C4D9EBCDA0>
+[2025-07-22 23:19:57,418] DEBUG - send_request_headers.started request=<Request [b'GET']>
+[2025-07-22 23:19:57,419] DEBUG - send_request_headers.complete
+[2025-07-22 23:19:57,419] DEBUG - send_request_body.started request=<Request [b'GET']>
+[2025-07-22 23:19:57,419] DEBUG - send_request_body.complete
+[2025-07-22 23:19:57,419] DEBUG - receive_response_headers.started request=<Request [b'GET']>
+[2025-07-22 23:19:57,913] DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 22 Jul 2025 20:19:57 GMT'), (b'Content-Type', b'application/json; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Keep-Alive', b'timeout=15'), (b'Vary', b'Accept-Encoding'), (b'X-RateLimit-Limit', b'1200'), (b'X-RateLimit-Remaining', b'923'), (b'X-RateLimit-Reset', b'1753215599'), (b'Server', b'Plack::Handler::Starlet'), (b'ETag', b'W/"8ea7340cf7288c4be80f9c523211a322"'), (b'Access-Control-Allow-Origin', b'*'), (b'X-Runtime', b'0.108539'), (b'X-Cache-Status', b'STALE'), (b'Content-Encoding', b'gzip')])
+[2025-07-22 23:19:57,913] INFO - HTTP Request: GET https://musicbrainz.org/ws/2/recording/200f0b3f-5001-4b86-a95d-75bec48c293b?inc=artists%2Breleases%2Btags&fmt=json "HTTP/1.1 200 OK"
+[2025-07-22 23:19:57,913] DEBUG - receive_response_body.started request=<Request [b'GET']>
+[2025-07-22 23:19:57,913] DEBUG - receive_response_body.complete
+[2025-07-22 23:19:57,913] DEBUG - response_closed.started
+[2025-07-22 23:19:57,913] DEBUG - response_closed.complete
+[2025-07-22 23:19:58,138] DEBUG - connect_tcp.started host='127.0.0.1' port=9050 timeout=15
+[2025-07-22 23:19:58,138] DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000001C4DAE4D3D0>
+[2025-07-22 23:19:58,138] DEBUG - setup_socks5_connection.started stream=<httpcore._backends.anyio.AnyIOStream object at 0x000001C4DAE4D3D0> host='musicbrainz.org' port=443 auth=None
+[2025-07-22 23:19:58,488] DEBUG - setup_socks5_connection.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000001C4DAE4D3D0>
+[2025-07-22 23:19:58,488] DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001C4DAB1A1D0> server_hostname='musicbrainz.org' timeout=15
+[2025-07-22 23:19:58,981] DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000001C4DAE4EF30>
+[2025-07-22 23:19:58,983] DEBUG - send_request_headers.started request=<Request [b'GET']>
+[2025-07-22 23:19:58,983] DEBUG - send_request_headers.complete
+[2025-07-22 23:19:58,983] DEBUG - send_request_body.started request=<Request [b'GET']>
+[2025-07-22 23:19:58,983] DEBUG - send_request_body.complete
+[2025-07-22 23:19:58,983] DEBUG - receive_response_headers.started request=<Request [b'GET']>
+[2025-07-22 23:19:59,467] DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 22 Jul 2025 20:19:59 GMT'), (b'Content-Type', b'application/json; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Keep-Alive', b'timeout=15'), (b'Vary', b'Accept-Encoding'), (b'X-RateLimit-Limit', b'1200'), (b'X-RateLimit-Remaining', b'1080'), (b'X-RateLimit-Reset', b'1753215601'), (b'Server', b'Plack::Handler::Starlet'), (b'ETag', b'W/"4478bb31a424449e0b48714eafd44357"'), (b'Access-Control-Allow-Origin', b'*'), (b'X-Runtime', b'0.116511'), (b'X-Cache-Status', b'STALE'), (b'Content-Encoding', b'gzip')])
+[2025-07-22 23:19:59,467] INFO - HTTP Request: GET https://musicbrainz.org/ws/2/release/0a91eab7-f566-4dd2-93b9-8b69a3f0f891?inc=recordings&fmt=json "HTTP/1.1 200 OK"
+[2025-07-22 23:19:59,467] DEBUG - receive_response_body.started request=<Request [b'GET']>
+[2025-07-22 23:19:59,467] DEBUG - receive_response_body.complete
+[2025-07-22 23:19:59,467] DEBUG - response_closed.started
+[2025-07-22 23:19:59,467] DEBUG - response_closed.complete
