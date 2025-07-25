@@ -1,5 +1,5 @@
 import MusicTags as MT
-import JSONParse as JSParse
+import Parse
 
 while True:
     choose = int(input("\n1 - да\n~$ "))
@@ -13,5 +13,5 @@ while True:
             print("Поки!")
             break
         case 3:
-            JSParse.printData("data.json")
+            Parse.printData("data.json")
             break

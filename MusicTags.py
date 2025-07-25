@@ -3,20 +3,46 @@ from mutagen.id3 import ID3, APIC
 from mutagen.easyid3 import EasyID3
 from mutagen.oggopus import OggOpus
 from mutagen.flac import Picture
+
 from pydub import AudioSegment
+
 from io import BufferedReader
 from base64 import b64encode
-from pathlib import Path
-import acoustid
+
 import subprocess
 import os
+from pathlib import Path
+
+import Parse
+import asyncio
+
+track_info, album_info = asyncio.run(Parse.main())
+'''
+TRACK_INFO
+"release_id"
+"album_title"
+"year"
+"artist_name"
+"tags"
+"length"
+"song_title"
+
+ALBUM_INFO
+"track_number"
+"track_title"
+"medium_title"
+"release_id"
+'''
+
+print(track_info, album_info)
 
 tags_to_edit = {
-    'title': "Рустем\u200B",
-    'artist': "Валентин Стрыкало\u200B",
-    'album': "Смирись и расслабься!\u200B",
-    'date': 2012,
-    'genre': "Панк-рок, камеди-рок, альтернативный рок, поп-панк"
+    "title": track_info[0]["song_title"],
+    "artist": track_info[0]["artist_name"],
+    "album": track_info[0]["album_title"],
+    "date": track_info[0]["year"],
+    "genre": "Панк-рок, камеди-рок, альтернативный рок, поп-панк",
+    "tracknumber": album_info[0]["track_number"]
 }
 
 def encodeWithFfmpeg(input_file, output_file, cover_path=None):
@@ -56,7 +82,6 @@ def editOpusTags(input_dir, audioname, tags_to_edit):
 
 def editMp3Tags(input_dir, audioname, tags_to_edit):
     audio = EasyID3(input_dir + audioname)
-    # duration, fingerprint = acoustid.fingerprint_file(audio)
 
     for tag_name, tag_value in tags_to_edit.items():
         audio[tag_name] = tag_value
