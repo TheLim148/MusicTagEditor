@@ -1,4 +1,4 @@
-import MusicTags as MT
+import MusicTagsEditor as MT
 import Parse
 
 while True:

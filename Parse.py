@@ -9,6 +9,7 @@ import logging
 import subprocess
 import time
 import os
+from pathlib import Path
 
 API_KEY = "hv3SsHefpw"
 USER_API_KEY = "FnlllFTowF"
@@ -35,11 +36,6 @@ logging.basicConfig(
     filemode="w",
     format='[%(asctime)s] %(levelname)s - %(message)s'
 )
-
-# for score, recording_id, title, artist in acoustid.match(API_KEY, os.path.join("testFolder", "1.mp3")):
-#     print(f"\n{score}, {recording_id}, {title}, {artist}")
-
-# duration, fingerprint = acoustid.fingerprint_file("testFolder\\1​.mp3")
 
 def printData(dataFile):
     with open(dataFile, "r", encoding="utf-8") as f:
@@ -86,6 +82,29 @@ def isTorRunning(host="127.0.0.1", port=9050):
 
 def clear_terminal():
     print('\033[2J\033[H', end='')
+
+async def get_cover_url(release_id):
+    url = f"https://coverartarchive.org/release/{release_id}"
+    try:
+        async with httpx.AsyncClient(follow_redirects=True) as client:
+            response = await client.get(url)
+            response.raise_for_status()
+            data = response.json()
+            for image in data.get("images", []):
+                if image.get("front"):
+                    return image.get("image")
+    except httpx.HTTPStatusError as e:
+        print(f"HTTP error: {e.response.status_code}")
+    except Exception as e:
+        print(f"Error: {e}")
+    return None
+
+async def download_image(url, path):
+    async with httpx.AsyncClient(follow_redirects=True) as client:
+        response = await client.get(url)
+        response.raise_for_status()
+        with open (Path(os.path.expanduser(path)), "wb") as f:
+            f.write(response.content)
 
 def parse_track_info(data):
     if "releases" not in data or not data["releases"]:
@@ -177,7 +196,22 @@ async def get_track_number_in_release(release_id, recording_id):
         except httpx.RequestError as e:
             return {"error": "Request error", "details": repr(e)}
 
+def start_tor():
+    if isTorRunning():
+        print("Tor is already runnig")
+    else:
+        print("Trying to start Tor")
+        with open("config.json", "r") as f:
+            cfg = json.load(f)
+        subprocess.Popen(
+            [cfg["tor_path"], "-f", cfg["torrc_path"]],
+            creationflags=subprocess.CREATE_NEW_CONSOLE
+        )
+        time.sleep(5)
+
 async def main():
+    with open("config.json", "r") as f:
+        cfg = json.load(f)
     clear_terminal()
     start_tor()
 
@@ -218,7 +252,8 @@ async def main():
             break
     
     album_info = await get_track_number_in_release(release_id, recording_id)
-
+    cover_url = await get_cover_url(release_id)
+    await download_image(cover_url, cfg["covers_path"] + "cover.jpg")
     # with open("trackInfo1.json", "w", encoding="utf-8") as f:
         # json.dump(track_info, f, indent=2, ensure_ascii=False)
 
@@ -227,20 +262,5 @@ async def main():
 
     return track_info, album_info
 
-def start_tor():
-    if isTorRunning():
-        print("Tor is already runnig")
-    else:
-        print("Trying to start Tor")
-        with open("config.json", "r") as f:
-            cfg = json.load(f)
-        subprocess.Popen(
-            [cfg["tor_path"], "-f", cfg["torrc_path"]],
-            creationflags=subprocess.CREATE_NEW_CONSOLE
-        )
-        time.sleep(5)
-
 if __name__ == "__main__":
     asyncio.run(main())
-
-# recording_ids = list(acoustid.match(API_KEY, os.path.join("testFolder", "1.mp3")))

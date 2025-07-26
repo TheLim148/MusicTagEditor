@@ -14,9 +14,26 @@ import os
 from pathlib import Path
 
 import Parse
+import json
 import asyncio
 
+with open("config.json", "r") as f:
+    cfg = json.load(f)
+
 track_info, album_info = asyncio.run(Parse.main())
+print(track_info, album_info)
+
+tags_to_edit = {
+    "title": track_info[0]["song_title"],
+    "artist": track_info[0]["artist_name"],
+    "album": track_info[0]["album_title"],
+    "date": track_info[0]["year"],
+    "genre": "Панк-рок, камеди-рок, альтернативный рок, поп-панк",
+    "tracknumber": album_info[0]["track_number"],
+    "musicbrainz_releasetrackid": album_info[0]["release_id"],
+    "length": str(track_info[0]["length"])
+}
+
 '''
 TRACK_INFO
 "release_id"
@@ -33,17 +50,6 @@ ALBUM_INFO
 "medium_title"
 "release_id"
 '''
-
-print(track_info, album_info)
-
-tags_to_edit = {
-    "title": track_info[0]["song_title"],
-    "artist": track_info[0]["artist_name"],
-    "album": track_info[0]["album_title"],
-    "date": track_info[0]["year"],
-    "genre": "Панк-рок, камеди-рок, альтернативный рок, поп-панк",
-    "tracknumber": album_info[0]["track_number"]
-}
 
 def encodeWithFfmpeg(input_file, output_file, cover_path=None):
     input_file = str(Path(input_file))
@@ -89,12 +95,12 @@ def editMp3Tags(input_dir, audioname, tags_to_edit):
     
     audio = MP3(input_dir + audioname, ID3 = ID3)
     audio.tags.delall("APIC")
-    with BufferedReader(open(f"Photos//1.webp", "rb")) as fh:
+    with BufferedReader(open(Path(os.path.expanduser(cfg["covers_path"]) + "cover.jpg"), "rb")) as fh:
         apic = APIC(data = fh.read(),
                     encoding = 3,
                     type = 3,
                     desc = "cover",
-                    mime = "image/webp")
+                    mime = "image/jpeg")
     audio.tags.add(apic)
     audio.save()
 
@@ -120,4 +126,9 @@ def fromRawMp3ToClean(dir_from, dir_to):
         )
         except Exception as e:
             print(f"Error: {e}")
-        
+
+async def main():
+    pass
+
+if __name__ == "__main__":
+    pass
