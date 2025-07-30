@@ -60,9 +60,6 @@ def printData(dataFile):
 def writeToData(dataFile, foo):
     with open(dataFile, "r", encoding="utf-8") as f:
         data = json.load(f)
-    
-    # foo
-    # JSON_TEMPLATE
 
     with open(dataFile, "w", encoding="utf-8") as f:
         json.dump(data, foo, indent=2)
@@ -161,6 +158,7 @@ async def get_musicbrainz_data(recording_id):
             response = await client.get(url, params=params, headers=headers)
             response.raise_for_status()
             data = response.json()
+            print("Информация о треке была получена")
             return parse_track_info(data)
         except httpx.HTTPStatusError as e:
             return {"error": "HTTP error", "details": repr(e)}
@@ -190,6 +188,7 @@ async def get_track_number_in_release(release_id, recording_id):
             response = await client.get(url, params=params, headers=headers)
             response.raise_for_status()
             data = response.json()
+            print("Информация об альбоме была получена")
             return parse_album_info(data, release_id, recording_id)
         except httpx.HTTPStatusError as e:
             return {"error": "HTTP error", "details": repr(e)}
@@ -253,14 +252,14 @@ async def main():
     
     album_info = await get_track_number_in_release(release_id, recording_id)
     cover_url = await get_cover_url(release_id)
-    await download_image(cover_url, cfg["covers_path"] + "cover.jpg")
+    await download_image(cover_url, cfg["covers_path"] + f"{release_id}.jpg")
     # with open("trackInfo1.json", "w", encoding="utf-8") as f:
         # json.dump(track_info, f, indent=2, ensure_ascii=False)
 
     # with open("albumInfo1.json", "w", encoding="utf-8") as f:
         # json.dump(album_info, f, indent=2, ensure_ascii=False)
 
-    return track_info, album_info
+    return track_info, album_info, release_id
 
 if __name__ == "__main__":
     asyncio.run(main())
