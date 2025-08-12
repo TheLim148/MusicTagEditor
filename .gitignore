@@ -1,0 +1,29 @@
+# Виртуальное окружение
+.venv/
+env/
+venv/
+
+# Кэш интерпретатора
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Кэш инструментов
+*.cache
+.pytest_cache/
+.mypy_cache/
+
+# Логи
+*.log
+debug_log.txt
+
+# Настройки IDE
+.vscode/
+.idea/
+
+*.mp3
+*.ogg
+
+
+

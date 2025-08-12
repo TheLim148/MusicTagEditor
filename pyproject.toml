@@ -1,0 +1,20 @@
+[project]
+name = "musictageditor"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "TheLim148",email = "ruzhov34@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.8,<=3.12.5"
+dependencies = [
+    "pydub (>=0.25.1,<0.26.0)",
+    "mutagen (>=1.47.0,<2.0.0)",
+    "httpx[socks] (>=0.28.1,<0.29.0)",
+    "pyacoustid (>=1.3.0,<2.0.0)",
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

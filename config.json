@@ -1,5 +1,5 @@
 {
     "tor_path": "C:/Tools/TorExpertBundle/tor/tor.exe",
-    "torrc_path": "C:/Tools/TorExpertBundle/tor/torrc",
+    "torrc_path": "~/torrc",
     "covers_path": "~/Pictures/album_covers/"
 }

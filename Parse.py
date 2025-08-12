@@ -65,8 +65,11 @@ def writeToData(dataFile, foo):
         json.dump(data, foo, indent=2)
 
 def send_newnym():
+    COOKIE = Path("~/.tor/control_auth_cookie")
+    cookie_hex = COOKIE.read_bytes().hex()
     with socket.create_connection(("127.0.0.1", 9051)) as s:
-        s.sendall(b'AUTHENTICATE \"\"\r\nSIGNAL NEWNYM\r\nQUIT\r\n')
+        msg = f'AUTHENTICATE {cookie_hex}\r\nSIGNAL NEWNYM\r\nQUIT\r\n'
+        s.sendall(msg.encode())
 
 def isTorRunning(host="127.0.0.1", port=9050):
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
@@ -203,7 +206,7 @@ def start_tor():
         with open("config.json", "r") as f:
             cfg = json.load(f)
         subprocess.Popen(
-            [cfg["tor_path"], "-f", cfg["torrc_path"]],
+            ["tor", "-f", cfg["torrc_path"]],
             creationflags=subprocess.CREATE_NEW_CONSOLE
         )
         time.sleep(5)
