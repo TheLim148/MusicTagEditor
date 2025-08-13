@@ -1,5 +1,4 @@
-import MusicTagsEditor as MT
-import Parse
+import tags_editor
 import asyncio
 
 while True:
@@ -7,11 +6,8 @@ while True:
 
     match(choose):
         case 1:
-            asyncio.run(MT.main())
+            asyncio.run(tags_editor.main())
             break
         case 2:
             print("Поки!")
-            break
-        case 3:
-            Parse.printData("data.json")
             break

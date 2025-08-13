@@ -1,172 +1,172 @@
-[2025-08-12 12:41:34,341] DEBUG - Using selector: EpollSelector
-[2025-08-12 12:41:34,573] DEBUG - Starting new HTTP connection (1): api.acoustid.org:80
-[2025-08-12 12:41:34,869] DEBUG - http://api.acoustid.org:80 "POST /v2/lookup HTTP/11" 200 None
-[2025-08-12 12:41:34,948] DEBUG - connect_tcp.started host='127.0.0.1' port=9050 timeout=15
-[2025-08-12 12:41:34,949] DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fd2bbf17b90>
-[2025-08-12 12:41:34,949] DEBUG - setup_socks5_connection.started stream=<httpcore._backends.anyio.AnyIOStream object at 0x7fd2bbf17b90> host='musicbrainz.org' port=443 auth=None
-[2025-08-12 12:41:35,072] DEBUG - setup_socks5_connection.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fd2bbf17b90>
-[2025-08-12 12:41:35,072] DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7fd2c0132bd0> server_hostname='musicbrainz.org' timeout=15
-[2025-08-12 12:41:35,285] DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fd2bbf170e0>
-[2025-08-12 12:41:35,285] DEBUG - send_request_headers.started request=<Request [b'GET']>
-[2025-08-12 12:41:35,287] DEBUG - send_request_headers.complete
-[2025-08-12 12:41:35,287] DEBUG - send_request_body.started request=<Request [b'GET']>
-[2025-08-12 12:41:35,287] DEBUG - send_request_body.complete
-[2025-08-12 12:41:35,287] DEBUG - receive_response_headers.started request=<Request [b'GET']>
-[2025-08-12 12:41:35,478] DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 12 Aug 2025 09:41:35 GMT'), (b'Content-Type', b'application/json; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Keep-Alive', b'timeout=15'), (b'Vary', b'Accept-Encoding'), (b'X-RateLimit-Limit', b'1200'), (b'X-RateLimit-Remaining', b'709'), (b'X-RateLimit-Reset', b'1754991696'), (b'Server', b'Plack::Handler::Starlet'), (b'ETag', b'W/"39826e70eecd7893ae10df8a52083cc1"'), (b'Access-Control-Allow-Origin', b'*'), (b'X-Runtime', b'0.053008'), (b'X-Cache-Status', b'MISS'), (b'Content-Encoding', b'gzip')])
-[2025-08-12 12:41:35,482] INFO - HTTP Request: GET https://musicbrainz.org/ws/2/recording/200f0b3f-5001-4b86-a95d-75bec48c293b?inc=artists%2Breleases%2Btags&fmt=json "HTTP/1.1 200 OK"
-[2025-08-12 12:41:35,482] DEBUG - receive_response_body.started request=<Request [b'GET']>
-[2025-08-12 12:41:35,483] DEBUG - receive_response_body.complete
-[2025-08-12 12:41:35,483] DEBUG - response_closed.started
-[2025-08-12 12:41:35,483] DEBUG - response_closed.complete
-[2025-08-12 12:41:35,493] DEBUG - connect_tcp.started host='127.0.0.1' port=9050 timeout=15
-[2025-08-12 12:41:35,493] DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fd2bbf80b00>
-[2025-08-12 12:41:35,493] DEBUG - setup_socks5_connection.started stream=<httpcore._backends.anyio.AnyIOStream object at 0x7fd2bbf80b00> host='musicbrainz.org' port=443 auth=None
-[2025-08-12 12:41:35,812] DEBUG - setup_socks5_connection.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fd2bbf80b00>
-[2025-08-12 12:41:35,812] DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7fd2c02558d0> server_hostname='musicbrainz.org' timeout=15
-[2025-08-12 12:41:36,055] DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fd2bbf808c0>
-[2025-08-12 12:41:36,056] DEBUG - send_request_headers.started request=<Request [b'GET']>
-[2025-08-12 12:41:36,057] DEBUG - send_request_headers.complete
-[2025-08-12 12:41:36,057] DEBUG - send_request_body.started request=<Request [b'GET']>
-[2025-08-12 12:41:36,057] DEBUG - send_request_body.complete
-[2025-08-12 12:41:36,057] DEBUG - receive_response_headers.started request=<Request [b'GET']>
-[2025-08-12 12:41:36,265] DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 12 Aug 2025 09:41:36 GMT'), (b'Content-Type', b'application/json; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Keep-Alive', b'timeout=15'), (b'Vary', b'Accept-Encoding'), (b'X-RateLimit-Limit', b'1200'), (b'X-RateLimit-Remaining', b'1183'), (b'X-RateLimit-Reset', b'1754991698'), (b'Server', b'Plack::Handler::Starlet'), (b'ETag', b'W/"a44d6af5cd8c03a3bc5e99486a029c85"'), (b'Access-Control-Allow-Origin', b'*'), (b'X-Runtime', b'0.060517'), (b'X-Cache-Status', b'MISS'), (b'Content-Encoding', b'gzip')])
-[2025-08-12 12:41:36,266] INFO - HTTP Request: GET https://musicbrainz.org/ws/2/release/0a91eab7-f566-4dd2-93b9-8b69a3f0f891?inc=recordings&fmt=json "HTTP/1.1 200 OK"
-[2025-08-12 12:41:36,266] DEBUG - receive_response_body.started request=<Request [b'GET']>
-[2025-08-12 12:41:36,267] DEBUG - receive_response_body.complete
-[2025-08-12 12:41:36,267] DEBUG - response_closed.started
-[2025-08-12 12:41:36,267] DEBUG - response_closed.complete
-[2025-08-12 12:41:36,277] DEBUG - connect_tcp.started host='coverartarchive.org' port=443 local_address=None timeout=5.0 socket_options=None
-[2025-08-12 12:41:36,398] DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fd2bbf81d30>
-[2025-08-12 12:41:36,399] DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7fd2bbf782d0> server_hostname='coverartarchive.org' timeout=5.0
-[2025-08-12 12:41:36,460] DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fd2bbf47e90>
-[2025-08-12 12:41:36,460] DEBUG - send_request_headers.started request=<Request [b'GET']>
-[2025-08-12 12:41:36,460] DEBUG - send_request_headers.complete
-[2025-08-12 12:41:36,460] DEBUG - send_request_body.started request=<Request [b'GET']>
-[2025-08-12 12:41:36,460] DEBUG - send_request_body.complete
-[2025-08-12 12:41:36,460] DEBUG - receive_response_headers.started request=<Request [b'GET']>
-[2025-08-12 12:41:36,540] DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 307, b'TEMPORARY REDIRECT', [(b'Date', b'Tue, 12 Aug 2025 09:41:36 GMT'), (b'Content-Type', b'text/plain; charset=utf-8'), (b'Content-Length', b'87'), (b'Connection', b'keep-alive'), (b'Keep-Alive', b'timeout=15'), (b'Location', b'https://archive.org/download/mbid-0a91eab7-f566-4dd2-93b9-8b69a3f0f891/index.json'), (b'Access-Control-Allow-Origin', b'*')])
-[2025-08-12 12:41:36,541] INFO - HTTP Request: GET https://coverartarchive.org/release/0a91eab7-f566-4dd2-93b9-8b69a3f0f891 "HTTP/1.1 307 TEMPORARY REDIRECT"
-[2025-08-12 12:41:36,547] DEBUG - receive_response_body.started request=<Request [b'GET']>
-[2025-08-12 12:41:36,549] DEBUG - receive_response_body.complete
-[2025-08-12 12:41:36,549] DEBUG - response_closed.started
-[2025-08-12 12:41:36,549] DEBUG - response_closed.complete
-[2025-08-12 12:41:36,550] DEBUG - connect_tcp.started host='archive.org' port=443 local_address=None timeout=5.0 socket_options=None
-[2025-08-12 12:41:37,045] DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fd2c02aa000>
-[2025-08-12 12:41:37,046] DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7fd2bbf782d0> server_hostname='archive.org' timeout=5.0
-[2025-08-12 12:41:37,362] DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fd2d55b4a40>
-[2025-08-12 12:41:37,363] DEBUG - send_request_headers.started request=<Request [b'GET']>
-[2025-08-12 12:41:37,363] DEBUG - send_request_headers.complete
-[2025-08-12 12:41:37,363] DEBUG - send_request_body.started request=<Request [b'GET']>
-[2025-08-12 12:41:37,363] DEBUG - send_request_body.complete
-[2025-08-12 12:41:37,363] DEBUG - receive_response_headers.started request=<Request [b'GET']>
-[2025-08-12 12:41:38,066] DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 302, b'Found', [(b'Server', b'nginx/1.24.0'), (b'Date', b'Tue, 12 Aug 2025 09:41:37 GMT'), (b'Content-Type', b'text/html; charset=UTF-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Access-Control-Allow-Origin', b'*'), (b'Accept-Ranges', b'bytes'), (b'Location', b'https://dn721201.ca.archive.org/0/items/mbid-0a91eab7-f566-4dd2-93b9-8b69a3f0f891/index.json'), (b'Strict-Transport-Security', b'max-age=15724800'), (b'Onion-Location', b'https://archivep75mbjunhxc6x4j5mwjmomyxb573v42baldlqu56ruil2oiad.onion/download/mbid-0a91eab7-f566-4dd2-93b9-8b69a3f0f891/index.json'), (b'Content-Security-Policy', b"report-uri https://archive.org/services/csp-report; default-src *; img-src * data: blob:; object-src 'none'; media-src * blob:; connect-src * data:; style-src 'unsafe-inline' https://archive.org/ https://archive.org https://esm.archive.org/ https://esm.ext.archive.org/ https://offshoot.prod.archive.org/ https://av.archive.org/css/ https://av.dev.archive.org/css/ https://accounts.google.com/gsi/ https://synerg.adp.com/; script-src 'nonce-b64dea25a5dae96bb8a9da3f84869a09' https://archive.org/includes/ https://archive.org/includes/ https://archive.org/components/ https://archive.org/components/ https://archive.org/v/ https://archive.org/v/ https://archive.org/upload/app/ https://archive.org/offshoot_assets/ https://archive.org/offshoot_assets/ https://esm.archive.org/ https://esm.ext.archive.org/ https://polyfill.archive.org/v3/polyfill.min.js https://offshoot.prod.archive.org/ https://av.archive.org/ https://av.dev.archive.org/ https://openlibrary.org/query.json https://emularity-engine.ux-b.archive.org/ https://emularity-config.ux-b.archive.org/ https://emularity-bios.ux-b.archive.org/ https://archive.org/services/emularity/ https://archive.org/services/emularity/ 'wasm-unsafe-eval' 'sha256-CoX53XgCdkM1zegYEEpMUeYIZnv663inNm8bQv2VRbM=' https://accounts.google.com/gsi/ https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/ https://workforcenow.adp.com/ https://synerg.adp.com/ https://apollo.archive.org"), (b'Referrer-Policy', b'no-referrer-when-downgrade')])
-[2025-08-12 12:41:38,068] INFO - HTTP Request: GET https://archive.org/download/mbid-0a91eab7-f566-4dd2-93b9-8b69a3f0f891/index.json "HTTP/1.1 302 Found"
-[2025-08-12 12:41:38,070] DEBUG - receive_response_body.started request=<Request [b'GET']>
-[2025-08-12 12:41:38,071] DEBUG - receive_response_body.complete
-[2025-08-12 12:41:38,071] DEBUG - response_closed.started
-[2025-08-12 12:41:38,071] DEBUG - response_closed.complete
-[2025-08-12 12:41:38,073] DEBUG - connect_tcp.started host='dn721201.ca.archive.org' port=443 local_address=None timeout=5.0 socket_options=None
-[2025-08-12 12:41:38,375] DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fd2bbf44e30>
-[2025-08-12 12:41:38,376] DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7fd2bbf782d0> server_hostname='dn721201.ca.archive.org' timeout=5.0
-[2025-08-12 12:41:38,581] DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fd2bbf16e10>
-[2025-08-12 12:41:38,581] DEBUG - send_request_headers.started request=<Request [b'GET']>
-[2025-08-12 12:41:38,583] DEBUG - send_request_headers.complete
-[2025-08-12 12:41:38,583] DEBUG - send_request_body.started request=<Request [b'GET']>
-[2025-08-12 12:41:38,583] DEBUG - send_request_body.complete
-[2025-08-12 12:41:38,584] DEBUG - receive_response_headers.started request=<Request [b'GET']>
-[2025-08-12 12:41:39,294] DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx'), (b'Date', b'Tue, 12 Aug 2025 09:41:39 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'856'), (b'Last-Modified', b'Thu, 22 May 2025 14:16:37 GMT'), (b'Connection', b'keep-alive'), (b'ETag', b'"682f31c5-358"'), (b'access-control-allow-credentials', b'true'), (b'access-control-allow-headers', b'Accept-Encoding,Accept-Language,Authorization,Baggage,Cache-Control,Content-Length,Content-Range,DNT,Pragma,Range,Sentry-Trace,X-Requested-With'), (b'access-control-allow-origin', b'*'), (b'Accept-Ranges', b'bytes')])
-[2025-08-12 12:41:39,296] INFO - HTTP Request: GET https://dn721201.ca.archive.org/0/items/mbid-0a91eab7-f566-4dd2-93b9-8b69a3f0f891/index.json "HTTP/1.1 200 OK"
-[2025-08-12 12:41:39,297] DEBUG - receive_response_body.started request=<Request [b'GET']>
-[2025-08-12 12:41:39,297] DEBUG - receive_response_body.complete
-[2025-08-12 12:41:39,298] DEBUG - response_closed.started
-[2025-08-12 12:41:39,298] DEBUG - response_closed.complete
-[2025-08-12 12:41:39,299] DEBUG - close.started
-[2025-08-12 12:41:39,299] DEBUG - close.complete
-[2025-08-12 12:41:39,299] DEBUG - close.started
-[2025-08-12 12:41:39,299] DEBUG - close.complete
-[2025-08-12 12:41:39,299] DEBUG - close.started
-[2025-08-12 12:41:39,299] DEBUG - close.complete
-[2025-08-12 12:41:39,303] DEBUG - connect_tcp.started host='coverartarchive.org' port=443 local_address=None timeout=5.0 socket_options=None
-[2025-08-12 12:41:39,362] DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fd2bbf80620>
-[2025-08-12 12:41:39,362] DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7fd2bbf792d0> server_hostname='coverartarchive.org' timeout=5.0
-[2025-08-12 12:41:39,432] DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fd2d7116480>
-[2025-08-12 12:41:39,433] DEBUG - send_request_headers.started request=<Request [b'GET']>
-[2025-08-12 12:41:39,436] DEBUG - send_request_headers.complete
-[2025-08-12 12:41:39,436] DEBUG - send_request_body.started request=<Request [b'GET']>
-[2025-08-12 12:41:39,437] DEBUG - send_request_body.complete
-[2025-08-12 12:41:39,437] DEBUG - receive_response_headers.started request=<Request [b'GET']>
-[2025-08-12 12:41:39,509] DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 307, b'TEMPORARY REDIRECT', [(b'Date', b'Tue, 12 Aug 2025 09:41:39 GMT'), (b'Content-Type', b'text/plain; charset=utf-8'), (b'Content-Length', b'134'), (b'Connection', b'keep-alive'), (b'Keep-Alive', b'timeout=15'), (b'Location', b'https://archive.org/download/mbid-0a91eab7-f566-4dd2-93b9-8b69a3f0f891/mbid-0a91eab7-f566-4dd2-93b9-8b69a3f0f891-41978780364.jpg'), (b'Access-Control-Allow-Origin', b'*')])
-[2025-08-12 12:41:39,510] INFO - HTTP Request: GET https://coverartarchive.org/release/0a91eab7-f566-4dd2-93b9-8b69a3f0f891/41978780364.jpg "HTTP/1.1 307 TEMPORARY REDIRECT"
-[2025-08-12 12:41:39,511] DEBUG - receive_response_body.started request=<Request [b'GET']>
-[2025-08-12 12:41:39,512] DEBUG - receive_response_body.complete
-[2025-08-12 12:41:39,512] DEBUG - response_closed.started
-[2025-08-12 12:41:39,513] DEBUG - response_closed.complete
-[2025-08-12 12:41:39,513] DEBUG - connect_tcp.started host='archive.org' port=443 local_address=None timeout=5.0 socket_options=None
-[2025-08-12 12:41:39,812] DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fd2bbf83680>
-[2025-08-12 12:41:39,812] DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7fd2bbf792d0> server_hostname='archive.org' timeout=5.0
-[2025-08-12 12:41:40,120] DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fd2bbf83f20>
-[2025-08-12 12:41:40,120] DEBUG - send_request_headers.started request=<Request [b'GET']>
-[2025-08-12 12:41:40,121] DEBUG - send_request_headers.complete
-[2025-08-12 12:41:40,121] DEBUG - send_request_body.started request=<Request [b'GET']>
-[2025-08-12 12:41:40,121] DEBUG - send_request_body.complete
-[2025-08-12 12:41:40,121] DEBUG - receive_response_headers.started request=<Request [b'GET']>
-[2025-08-12 12:41:40,523] DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 302, b'Found', [(b'Server', b'nginx/1.24.0'), (b'Date', b'Tue, 12 Aug 2025 09:41:40 GMT'), (b'Content-Type', b'image/jpeg'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Access-Control-Allow-Origin', b'*'), (b'Accept-Ranges', b'bytes'), (b'Location', b'https://dn721201.ca.archive.org/0/items/mbid-0a91eab7-f566-4dd2-93b9-8b69a3f0f891/mbid-0a91eab7-f566-4dd2-93b9-8b69a3f0f891-41978780364.jpg'), (b'Strict-Transport-Security', b'max-age=15724800'), (b'Onion-Location', b'https://archivep75mbjunhxc6x4j5mwjmomyxb573v42baldlqu56ruil2oiad.onion/download/mbid-0a91eab7-f566-4dd2-93b9-8b69a3f0f891/mbid-0a91eab7-f566-4dd2-93b9-8b69a3f0f891-41978780364.jpg'), (b'Content-Security-Policy', b"report-uri https://archive.org/services/csp-report; default-src *; img-src * data: blob:; object-src 'none'; media-src * blob:; connect-src * data:; style-src 'unsafe-inline' https://archive.org/ https://archive.org https://esm.archive.org/ https://esm.ext.archive.org/ https://offshoot.prod.archive.org/ https://av.archive.org/css/ https://av.dev.archive.org/css/ https://accounts.google.com/gsi/ https://synerg.adp.com/; script-src 'nonce-8e04c8e18002a93bed49940deb3618ce' https://archive.org/includes/ https://archive.org/includes/ https://archive.org/components/ https://archive.org/components/ https://archive.org/v/ https://archive.org/v/ https://archive.org/upload/app/ https://archive.org/offshoot_assets/ https://archive.org/offshoot_assets/ https://esm.archive.org/ https://esm.ext.archive.org/ https://polyfill.archive.org/v3/polyfill.min.js https://offshoot.prod.archive.org/ https://av.archive.org/ https://av.dev.archive.org/ https://openlibrary.org/query.json https://emularity-engine.ux-b.archive.org/ https://emularity-config.ux-b.archive.org/ https://emularity-bios.ux-b.archive.org/ https://archive.org/services/emularity/ https://archive.org/services/emularity/ 'wasm-unsafe-eval' 'sha256-CoX53XgCdkM1zegYEEpMUeYIZnv663inNm8bQv2VRbM=' https://accounts.google.com/gsi/ https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/ https://workforcenow.adp.com/ https://synerg.adp.com/ https://apollo.archive.org"), (b'Referrer-Policy', b'no-referrer-when-downgrade')])
-[2025-08-12 12:41:40,523] INFO - HTTP Request: GET https://archive.org/download/mbid-0a91eab7-f566-4dd2-93b9-8b69a3f0f891/mbid-0a91eab7-f566-4dd2-93b9-8b69a3f0f891-41978780364.jpg "HTTP/1.1 302 Found"
-[2025-08-12 12:41:40,524] DEBUG - receive_response_body.started request=<Request [b'GET']>
-[2025-08-12 12:41:40,524] DEBUG - receive_response_body.complete
-[2025-08-12 12:41:40,524] DEBUG - response_closed.started
-[2025-08-12 12:41:40,525] DEBUG - response_closed.complete
-[2025-08-12 12:41:40,525] DEBUG - connect_tcp.started host='dn721201.ca.archive.org' port=443 local_address=None timeout=5.0 socket_options=None
-[2025-08-12 12:41:40,727] DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fd2bbf8c200>
-[2025-08-12 12:41:40,728] DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7fd2bbf792d0> server_hostname='dn721201.ca.archive.org' timeout=5.0
-[2025-08-12 12:41:40,935] DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fd2bbf8ce30>
-[2025-08-12 12:41:40,935] DEBUG - send_request_headers.started request=<Request [b'GET']>
-[2025-08-12 12:41:40,936] DEBUG - send_request_headers.complete
-[2025-08-12 12:41:40,936] DEBUG - send_request_body.started request=<Request [b'GET']>
-[2025-08-12 12:41:40,936] DEBUG - send_request_body.complete
-[2025-08-12 12:41:40,936] DEBUG - receive_response_headers.started request=<Request [b'GET']>
-[2025-08-12 12:41:41,649] DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx'), (b'Date', b'Tue, 12 Aug 2025 09:41:41 GMT'), (b'Content-Type', b'image/jpeg'), (b'Content-Length', b'173785'), (b'Last-Modified', b'Thu, 15 May 2025 13:45:11 GMT'), (b'Connection', b'keep-alive'), (b'ETag', b'"6825efe7-2a6d9"'), (b'access-control-allow-credentials', b'true'), (b'access-control-allow-headers', b'Accept-Encoding,Accept-Language,Authorization,Baggage,Cache-Control,Content-Length,Content-Range,DNT,Pragma,Range,Sentry-Trace,X-Requested-With'), (b'access-control-allow-origin', b'*'), (b'Accept-Ranges', b'bytes')])
-[2025-08-12 12:41:41,650] INFO - HTTP Request: GET https://dn721201.ca.archive.org/0/items/mbid-0a91eab7-f566-4dd2-93b9-8b69a3f0f891/mbid-0a91eab7-f566-4dd2-93b9-8b69a3f0f891-41978780364.jpg "HTTP/1.1 200 OK"
-[2025-08-12 12:41:41,650] DEBUG - receive_response_body.started request=<Request [b'GET']>
-[2025-08-12 12:41:43,390] DEBUG - receive_response_body.complete
-[2025-08-12 12:41:43,391] DEBUG - response_closed.started
-[2025-08-12 12:41:43,391] DEBUG - response_closed.complete
-[2025-08-12 12:41:43,429] DEBUG - close.started
-[2025-08-12 12:41:43,432] DEBUG - close.complete
-[2025-08-12 12:41:43,432] DEBUG - close.started
-[2025-08-12 12:41:43,433] DEBUG - close.complete
-[2025-08-12 12:41:43,434] DEBUG - close.started
-[2025-08-12 12:41:43,435] DEBUG - close.complete
-[2025-08-12 12:41:45,659] DEBUG - Using selector: EpollSelector
-[2025-08-12 12:42:18,348] DEBUG - subprocess.call(['ffmpeg', '-y', '-f', 'mp3', '-i', '/home/lima148/Documents/Scripts/Python/MusicTagEditor/testFolder/1.mp3', '-acodec', 'pcm_s16le', '-vn', '-f', 'wav', '-'])
-[2025-08-12 12:42:18,615] DEBUG - subprocess.call(['ffmpeg', '-y', '-f', 'wav', '-i', '/tmp/tmpumcjl0qf', '-f', 'mp3', '/tmp/tmptlw_oxdh'])
-[2025-08-12 12:42:20,964] DEBUG - subprocess output: b'ffmpeg version n7.1.1 Copyright (c) 2000-2025 the FFmpeg developers'
-[2025-08-12 12:42:20,964] DEBUG - subprocess output: b'  built with gcc 15.1.1 (GCC) 20250425'
-[2025-08-12 12:42:20,964] DEBUG - subprocess output: b'  configuration: --prefix=/usr --disable-debug --disable-static --disable-stripping --enable-amf --enable-avisynth --enable-cuda-llvm --enable-lto --enable-fontconfig --enable-frei0r --enable-gmp --enable-gnutls --enable-gpl --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libdav1d --enable-libdrm --enable-libdvdnav --enable-libdvdread --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgsm --enable-libharfbuzz --enable-libiec61883 --enable-libjack --enable-libjxl --enable-libmodplug --enable-libmp3lame --enable-libopencore_amrnb --enable-libopencore_amrwb --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libplacebo --enable-libpulse --enable-librav1e --enable-librsvg --enable-librubberband --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libv4l2 --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpl --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxcb --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq --enable-nvdec --enable-nvenc --enable-opencl --enable-opengl --enable-shared --enable-vapoursynth --enable-version3 --enable-vulkan'
-[2025-08-12 12:42:20,964] DEBUG - subprocess output: b'  libavutil      59. 39.100 / 59. 39.100'
-[2025-08-12 12:42:20,964] DEBUG - subprocess output: b'  libavcodec     61. 19.101 / 61. 19.101'
-[2025-08-12 12:42:20,964] DEBUG - subprocess output: b'  libavformat    61.  7.100 / 61.  7.100'
-[2025-08-12 12:42:20,964] DEBUG - subprocess output: b'  libavdevice    61.  3.100 / 61.  3.100'
-[2025-08-12 12:42:20,964] DEBUG - subprocess output: b'  libavfilter    10.  4.100 / 10.  4.100'
-[2025-08-12 12:42:20,964] DEBUG - subprocess output: b'  libswscale      8.  3.100 /  8.  3.100'
-[2025-08-12 12:42:20,964] DEBUG - subprocess output: b'  libswresample   5.  3.100 /  5.  3.100'
-[2025-08-12 12:42:20,964] DEBUG - subprocess output: b'  libpostproc    58.  3.100 / 58.  3.100'
-[2025-08-12 12:42:20,964] DEBUG - subprocess output: b'[aist#0:0/pcm_s16le @ 0x55ce641dc640] Guessed Channel Layout: stereo'
-[2025-08-12 12:42:20,964] DEBUG - subprocess output: b"Input #0, wav, from '/tmp/tmpumcjl0qf':"
-[2025-08-12 12:42:20,964] DEBUG - subprocess output: b'  Duration: 00:03:31.72, bitrate: 1411 kb/s'
-[2025-08-12 12:42:20,964] DEBUG - subprocess output: b'  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 44100 Hz, stereo, s16, 1411 kb/s'
-[2025-08-12 12:42:20,964] DEBUG - subprocess output: b'Stream mapping:'
-[2025-08-12 12:42:20,964] DEBUG - subprocess output: b'  Stream #0:0 -> #0:0 (pcm_s16le (native) -> mp3 (libmp3lame))'
-[2025-08-12 12:42:20,964] DEBUG - subprocess output: b'Press [q] to stop, [?] for help'
-[2025-08-12 12:42:20,964] DEBUG - subprocess output: b"Output #0, mp3, to '/tmp/tmptlw_oxdh':"
-[2025-08-12 12:42:20,964] DEBUG - subprocess output: b'  Metadata:'
-[2025-08-12 12:42:20,964] DEBUG - subprocess output: b'    TSSE            : Lavf61.7.100'
-[2025-08-12 12:42:20,964] DEBUG - subprocess output: b'  Stream #0:0: Audio: mp3, 44100 Hz, stereo, s16p'
-[2025-08-12 12:42:20,964] DEBUG - subprocess output: b'      Metadata:'
-[2025-08-12 12:42:20,964] DEBUG - subprocess output: b'        encoder         : Lavc61.19.101 libmp3lame'
-[2025-08-12 12:42:20,964] DEBUG - subprocess output: b'size=     512KiB time=00:00:46.34 bitrate=  90.5kbits/s speed=92.7x'
-[2025-08-12 12:42:20,964] DEBUG - subprocess output: b'size=    1280KiB time=00:01:30.61 bitrate= 115.7kbits/s speed=90.6x'
-[2025-08-12 12:42:20,964] DEBUG - subprocess output: b'size=    2048KiB time=00:02:15.86 bitrate= 123.5kbits/s speed=90.6x'
-[2025-08-12 12:42:20,964] DEBUG - subprocess output: b'size=    2816KiB time=00:03:02.33 bitrate= 126.5kbits/s speed=91.2x'
-[2025-08-12 12:42:20,964] DEBUG - subprocess output: b'[out#0/mp3 @ 0x55ce641dc7c0] video:0KiB audio:3309KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.007438%'
-[2025-08-12 12:42:20,964] DEBUG - subprocess output: b'size=    3309KiB time=00:03:31.72 bitrate= 128.0kbits/s speed=92.1x'
+[2025-08-13 12:10:23,288] DEBUG - Using selector: EpollSelector
+[2025-08-13 12:10:23,562] DEBUG - Starting new HTTP connection (1): api.acoustid.org:80
+[2025-08-13 12:10:23,878] DEBUG - http://api.acoustid.org:80 "POST /v2/lookup HTTP/11" 200 None
+[2025-08-13 12:10:23,968] DEBUG - connect_tcp.started host='127.0.0.1' port=9050 timeout=15
+[2025-08-13 12:10:23,969] DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7f4cfce414f0>
+[2025-08-13 12:10:23,969] DEBUG - setup_socks5_connection.started stream=<httpcore._backends.anyio.AnyIOStream object at 0x7f4cfce414f0> host='musicbrainz.org' port=443 auth=None
+[2025-08-13 12:10:24,103] DEBUG - setup_socks5_connection.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7f4cfce414f0>
+[2025-08-13 12:10:24,103] DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7f4cfcd8ecd0> server_hostname='musicbrainz.org' timeout=15
+[2025-08-13 12:10:24,357] DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7f4d200c91c0>
+[2025-08-13 12:10:24,358] DEBUG - send_request_headers.started request=<Request [b'GET']>
+[2025-08-13 12:10:24,360] DEBUG - send_request_headers.complete
+[2025-08-13 12:10:24,360] DEBUG - send_request_body.started request=<Request [b'GET']>
+[2025-08-13 12:10:24,360] DEBUG - send_request_body.complete
+[2025-08-13 12:10:24,361] DEBUG - receive_response_headers.started request=<Request [b'GET']>
+[2025-08-13 12:10:24,794] DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 13 Aug 2025 09:10:24 GMT'), (b'Content-Type', b'application/json; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Keep-Alive', b'timeout=15'), (b'Vary', b'Accept-Encoding'), (b'X-RateLimit-Limit', b'1200'), (b'X-RateLimit-Remaining', b'749'), (b'X-RateLimit-Reset', b'1755076225'), (b'Server', b'Plack::Handler::Starlet'), (b'ETag', b'W/"70ecf6e7b3f22c9b6aadd8cbdbbea7af"'), (b'Access-Control-Allow-Origin', b'*'), (b'X-Runtime', b'0.142990'), (b'X-Cache-Status', b'MISS'), (b'Content-Encoding', b'gzip')])
+[2025-08-13 12:10:24,797] INFO - HTTP Request: GET https://musicbrainz.org/ws/2/recording/200f0b3f-5001-4b86-a95d-75bec48c293b?inc=artists%2Breleases%2Btags&fmt=json "HTTP/1.1 200 OK"
+[2025-08-13 12:10:24,798] DEBUG - receive_response_body.started request=<Request [b'GET']>
+[2025-08-13 12:10:24,798] DEBUG - receive_response_body.complete
+[2025-08-13 12:10:24,799] DEBUG - response_closed.started
+[2025-08-13 12:10:24,799] DEBUG - response_closed.complete
+[2025-08-13 12:10:24,809] DEBUG - connect_tcp.started host='127.0.0.1' port=9050 timeout=15
+[2025-08-13 12:10:24,810] DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7f4cfcdfa960>
+[2025-08-13 12:10:24,810] DEBUG - setup_socks5_connection.started stream=<httpcore._backends.anyio.AnyIOStream object at 0x7f4cfcdfa960> host='musicbrainz.org' port=443 auth=None
+[2025-08-13 12:10:26,072] DEBUG - setup_socks5_connection.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7f4cfcdfa960>
+[2025-08-13 12:10:26,072] DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7f4cfe0999d0> server_hostname='musicbrainz.org' timeout=15
+[2025-08-13 12:10:27,772] DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7f4cfcdfae10>
+[2025-08-13 12:10:27,772] DEBUG - send_request_headers.started request=<Request [b'GET']>
+[2025-08-13 12:10:27,773] DEBUG - send_request_headers.complete
+[2025-08-13 12:10:27,773] DEBUG - send_request_body.started request=<Request [b'GET']>
+[2025-08-13 12:10:27,774] DEBUG - send_request_body.complete
+[2025-08-13 12:10:27,774] DEBUG - receive_response_headers.started request=<Request [b'GET']>
+[2025-08-13 12:10:28,343] DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 13 Aug 2025 09:10:28 GMT'), (b'Content-Type', b'application/json; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Keep-Alive', b'timeout=15'), (b'Vary', b'Accept-Encoding'), (b'X-RateLimit-Limit', b'1200'), (b'X-RateLimit-Remaining', b'953'), (b'X-RateLimit-Reset', b'1755076229'), (b'Server', b'Plack::Handler::Starlet'), (b'ETag', b'W/"0d4cd255650fc86b6c6fcb41bd68254b"'), (b'Access-Control-Allow-Origin', b'*'), (b'X-Runtime', b'0.145876'), (b'X-Cache-Status', b'MISS'), (b'Content-Encoding', b'gzip')])
+[2025-08-13 12:10:28,344] INFO - HTTP Request: GET https://musicbrainz.org/ws/2/release/0a91eab7-f566-4dd2-93b9-8b69a3f0f891?inc=recordings&fmt=json "HTTP/1.1 200 OK"
+[2025-08-13 12:10:28,378] DEBUG - receive_response_body.started request=<Request [b'GET']>
+[2025-08-13 12:10:28,379] DEBUG - receive_response_body.complete
+[2025-08-13 12:10:28,380] DEBUG - response_closed.started
+[2025-08-13 12:10:28,380] DEBUG - response_closed.complete
+[2025-08-13 12:10:28,396] DEBUG - connect_tcp.started host='coverartarchive.org' port=443 local_address=None timeout=5.0 socket_options=None
+[2025-08-13 12:10:28,490] DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7f4cfcc44530>
+[2025-08-13 12:10:28,491] DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7f4cfce283d0> server_hostname='coverartarchive.org' timeout=5.0
+[2025-08-13 12:10:28,551] DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7f4cfcdd1a60>
+[2025-08-13 12:10:28,551] DEBUG - send_request_headers.started request=<Request [b'GET']>
+[2025-08-13 12:10:28,552] DEBUG - send_request_headers.complete
+[2025-08-13 12:10:28,552] DEBUG - send_request_body.started request=<Request [b'GET']>
+[2025-08-13 12:10:28,552] DEBUG - send_request_body.complete
+[2025-08-13 12:10:28,552] DEBUG - receive_response_headers.started request=<Request [b'GET']>
+[2025-08-13 12:10:28,622] DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 307, b'TEMPORARY REDIRECT', [(b'Date', b'Wed, 13 Aug 2025 09:10:28 GMT'), (b'Content-Type', b'text/plain; charset=utf-8'), (b'Content-Length', b'87'), (b'Connection', b'keep-alive'), (b'Keep-Alive', b'timeout=15'), (b'Location', b'https://archive.org/download/mbid-0a91eab7-f566-4dd2-93b9-8b69a3f0f891/index.json'), (b'Access-Control-Allow-Origin', b'*')])
+[2025-08-13 12:10:28,623] INFO - HTTP Request: GET https://coverartarchive.org/release/0a91eab7-f566-4dd2-93b9-8b69a3f0f891 "HTTP/1.1 307 TEMPORARY REDIRECT"
+[2025-08-13 12:10:28,628] DEBUG - receive_response_body.started request=<Request [b'GET']>
+[2025-08-13 12:10:28,629] DEBUG - receive_response_body.complete
+[2025-08-13 12:10:28,629] DEBUG - response_closed.started
+[2025-08-13 12:10:28,630] DEBUG - response_closed.complete
+[2025-08-13 12:10:28,630] DEBUG - connect_tcp.started host='archive.org' port=443 local_address=None timeout=5.0 socket_options=None
+[2025-08-13 12:10:28,958] DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7f4cfe102060>
+[2025-08-13 12:10:28,958] DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7f4cfce283d0> server_hostname='archive.org' timeout=5.0
+[2025-08-13 12:10:29,270] DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7f4cfe0af3e0>
+[2025-08-13 12:10:29,271] DEBUG - send_request_headers.started request=<Request [b'GET']>
+[2025-08-13 12:10:29,272] DEBUG - send_request_headers.complete
+[2025-08-13 12:10:29,272] DEBUG - send_request_body.started request=<Request [b'GET']>
+[2025-08-13 12:10:29,272] DEBUG - send_request_body.complete
+[2025-08-13 12:10:29,272] DEBUG - receive_response_headers.started request=<Request [b'GET']>
+[2025-08-13 12:10:29,880] DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 302, b'Found', [(b'Server', b'nginx/1.24.0'), (b'Date', b'Wed, 13 Aug 2025 09:10:29 GMT'), (b'Content-Type', b'text/html; charset=UTF-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Access-Control-Allow-Origin', b'*'), (b'Accept-Ranges', b'bytes'), (b'Location', b'https://ia800800.us.archive.org/29/items/mbid-0a91eab7-f566-4dd2-93b9-8b69a3f0f891/index.json'), (b'Strict-Transport-Security', b'max-age=15724800'), (b'Onion-Location', b'https://archivep75mbjunhxc6x4j5mwjmomyxb573v42baldlqu56ruil2oiad.onion/download/mbid-0a91eab7-f566-4dd2-93b9-8b69a3f0f891/index.json'), (b'Content-Security-Policy', b"report-uri https://archive.org/services/csp-report; default-src *; img-src * data: blob:; object-src 'none'; media-src * blob:; connect-src * data:; style-src 'unsafe-inline' https://archive.org/ https://archive.org https://esm.archive.org/ https://esm.ext.archive.org/ https://offshoot.prod.archive.org/ https://av.archive.org/css/ https://av.dev.archive.org/css/ https://accounts.google.com/gsi/ https://synerg.adp.com/; script-src 'nonce-f5741bd7058e272ce67355a8fca1e114' https://archive.org/includes/ https://archive.org/includes/ https://archive.org/components/ https://archive.org/components/ https://archive.org/v/ https://archive.org/v/ https://archive.org/upload/app/ https://archive.org/offshoot_assets/ https://archive.org/offshoot_assets/ https://esm.archive.org/ https://esm.ext.archive.org/ https://polyfill.archive.org/v3/polyfill.min.js https://offshoot.prod.archive.org/ https://av.archive.org/ https://av.dev.archive.org/ https://openlibrary.org/query.json https://emularity-engine.ux-b.archive.org/ https://emularity-config.ux-b.archive.org/ https://emularity-bios.ux-b.archive.org/ https://archive.org/services/emularity/ https://archive.org/services/emularity/ 'wasm-unsafe-eval' 'sha256-CoX53XgCdkM1zegYEEpMUeYIZnv663inNm8bQv2VRbM=' https://accounts.google.com/gsi/ https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/ https://workforcenow.adp.com/ https://synerg.adp.com/ https://apollo.archive.org"), (b'Referrer-Policy', b'no-referrer-when-downgrade')])
+[2025-08-13 12:10:29,881] INFO - HTTP Request: GET https://archive.org/download/mbid-0a91eab7-f566-4dd2-93b9-8b69a3f0f891/index.json "HTTP/1.1 302 Found"
+[2025-08-13 12:10:29,883] DEBUG - receive_response_body.started request=<Request [b'GET']>
+[2025-08-13 12:10:29,883] DEBUG - receive_response_body.complete
+[2025-08-13 12:10:29,884] DEBUG - response_closed.started
+[2025-08-13 12:10:29,884] DEBUG - response_closed.complete
+[2025-08-13 12:10:29,886] DEBUG - connect_tcp.started host='ia800800.us.archive.org' port=443 local_address=None timeout=5.0 socket_options=None
+[2025-08-13 12:10:30,184] DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7f4cfce41190>
+[2025-08-13 12:10:30,185] DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7f4cfce283d0> server_hostname='ia800800.us.archive.org' timeout=5.0
+[2025-08-13 12:10:30,403] DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7f4cfcdfb0e0>
+[2025-08-13 12:10:30,404] DEBUG - send_request_headers.started request=<Request [b'GET']>
+[2025-08-13 12:10:30,405] DEBUG - send_request_headers.complete
+[2025-08-13 12:10:30,405] DEBUG - send_request_body.started request=<Request [b'GET']>
+[2025-08-13 12:10:30,406] DEBUG - send_request_body.complete
+[2025-08-13 12:10:30,407] DEBUG - receive_response_headers.started request=<Request [b'GET']>
+[2025-08-13 12:10:30,615] DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx/1.24.0'), (b'Date', b'Wed, 13 Aug 2025 09:10:30 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'856'), (b'Last-Modified', b'Thu, 22 May 2025 14:16:37 GMT'), (b'Connection', b'keep-alive'), (b'ETag', b'"682f31c5-358"'), (b'Strict-Transport-Security', b'max-age=15724800'), (b'Content-Security-Policy-Report-Only', b"report-uri https://archive.org/services/csp-report; default-src *; img-src * data: blob:; object-src 'none'; media-src * blob:; connect-src * data:; style-src 'unsafe-inline' https://archive.org/ https://ia800800.us.archive.org https://esm.archive.org/ https://esm.ext.archive.org/ https://offshoot.prod.archive.org/ https://av.archive.org/css/ https://av.dev.archive.org/css/ https://accounts.google.com/gsi/ https://synerg.adp.com/; script-src 'nonce-0f60c19f1cbff592878a7e7335abb283' https://archive.org/includes/ https://ia800800.us.archive.org/includes/ https://archive.org/components/ https://ia800800.us.archive.org/components/ https://archive.org/v/ https://ia800800.us.archive.org/v/ https://ia800800.us.archive.org/upload/app/ https://archive.org/offshoot_assets/ https://ia800800.us.archive.org/offshoot_assets/ https://esm.archive.org/ https://esm.ext.archive.org/ https://polyfill.archive.org/v3/polyfill.min.js https://offshoot.prod.archive.org/ https://av.archive.org/ https://av.dev.archive.org/ https://openlibrary.org/query.json https://emularity-engine.ux-b.archive.org/ https://emularity-config.ux-b.archive.org/ https://emularity-bios.ux-b.archive.org/ https://archive.org/services/emularity/ https://ia800800.us.archive.org/services/emularity/ 'wasm-unsafe-eval' 'sha256-CoX53XgCdkM1zegYEEpMUeYIZnv663inNm8bQv2VRbM=' https://accounts.google.com/gsi/ https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/ https://workforcenow.adp.com/ https://synerg.adp.com/ https://apollo.archive.org"), (b'Expires', b'Wed, 13 Aug 2025 15:10:30 GMT'), (b'Cache-Control', b'max-age=21600'), (b'Access-Control-Allow-Origin', b'*'), (b'Access-Control-Allow-Headers', b'Accept-Encoding,Accept-Language,Authorization,Baggage,Cache-Control,Content-Length,Content-Range,DNT,Pragma,Range,Sentry-Trace,X-Requested-With'), (b'Access-Control-Allow-Credentials', b'true'), (b'Accept-Ranges', b'bytes')])
+[2025-08-13 12:10:30,616] INFO - HTTP Request: GET https://ia800800.us.archive.org/29/items/mbid-0a91eab7-f566-4dd2-93b9-8b69a3f0f891/index.json "HTTP/1.1 200 OK"
+[2025-08-13 12:10:30,616] DEBUG - receive_response_body.started request=<Request [b'GET']>
+[2025-08-13 12:10:30,616] DEBUG - receive_response_body.complete
+[2025-08-13 12:10:30,617] DEBUG - response_closed.started
+[2025-08-13 12:10:30,617] DEBUG - response_closed.complete
+[2025-08-13 12:10:30,618] DEBUG - close.started
+[2025-08-13 12:10:30,619] DEBUG - close.complete
+[2025-08-13 12:10:30,619] DEBUG - close.started
+[2025-08-13 12:10:30,619] DEBUG - close.complete
+[2025-08-13 12:10:30,620] DEBUG - close.started
+[2025-08-13 12:10:30,620] DEBUG - close.complete
+[2025-08-13 12:10:30,628] DEBUG - connect_tcp.started host='coverartarchive.org' port=443 local_address=None timeout=5.0 socket_options=None
+[2025-08-13 12:10:30,679] DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7f4cfcdfaba0>
+[2025-08-13 12:10:30,679] DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7f4cfce293d0> server_hostname='coverartarchive.org' timeout=5.0
+[2025-08-13 12:10:30,737] DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7f4cfcdfb1a0>
+[2025-08-13 12:10:30,737] DEBUG - send_request_headers.started request=<Request [b'GET']>
+[2025-08-13 12:10:30,738] DEBUG - send_request_headers.complete
+[2025-08-13 12:10:30,738] DEBUG - send_request_body.started request=<Request [b'GET']>
+[2025-08-13 12:10:30,738] DEBUG - send_request_body.complete
+[2025-08-13 12:10:30,738] DEBUG - receive_response_headers.started request=<Request [b'GET']>
+[2025-08-13 12:10:30,838] DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 307, b'TEMPORARY REDIRECT', [(b'Date', b'Wed, 13 Aug 2025 09:10:30 GMT'), (b'Content-Type', b'text/plain; charset=utf-8'), (b'Content-Length', b'134'), (b'Connection', b'keep-alive'), (b'Keep-Alive', b'timeout=15'), (b'Location', b'https://archive.org/download/mbid-0a91eab7-f566-4dd2-93b9-8b69a3f0f891/mbid-0a91eab7-f566-4dd2-93b9-8b69a3f0f891-41978780364.jpg'), (b'Access-Control-Allow-Origin', b'*')])
+[2025-08-13 12:10:30,839] INFO - HTTP Request: GET https://coverartarchive.org/release/0a91eab7-f566-4dd2-93b9-8b69a3f0f891/41978780364.jpg "HTTP/1.1 307 TEMPORARY REDIRECT"
+[2025-08-13 12:10:30,840] DEBUG - receive_response_body.started request=<Request [b'GET']>
+[2025-08-13 12:10:30,841] DEBUG - receive_response_body.complete
+[2025-08-13 12:10:30,841] DEBUG - response_closed.started
+[2025-08-13 12:10:30,841] DEBUG - response_closed.complete
+[2025-08-13 12:10:30,843] DEBUG - connect_tcp.started host='archive.org' port=443 local_address=None timeout=5.0 socket_options=None
+[2025-08-13 12:10:31,112] DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7f4cfcc46360>
+[2025-08-13 12:10:31,112] DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7f4cfce293d0> server_hostname='archive.org' timeout=5.0
+[2025-08-13 12:10:31,477] DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7f4cfcc46bd0>
+[2025-08-13 12:10:31,478] DEBUG - send_request_headers.started request=<Request [b'GET']>
+[2025-08-13 12:10:31,479] DEBUG - send_request_headers.complete
+[2025-08-13 12:10:31,479] DEBUG - send_request_body.started request=<Request [b'GET']>
+[2025-08-13 12:10:31,480] DEBUG - send_request_body.complete
+[2025-08-13 12:10:31,480] DEBUG - receive_response_headers.started request=<Request [b'GET']>
+[2025-08-13 12:10:32,337] DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 302, b'Found', [(b'Server', b'nginx/1.24.0'), (b'Date', b'Wed, 13 Aug 2025 09:10:31 GMT'), (b'Content-Type', b'image/jpeg'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Access-Control-Allow-Origin', b'*'), (b'Accept-Ranges', b'bytes'), (b'Location', b'https://dn721201.ca.archive.org/0/items/mbid-0a91eab7-f566-4dd2-93b9-8b69a3f0f891/mbid-0a91eab7-f566-4dd2-93b9-8b69a3f0f891-41978780364.jpg'), (b'Strict-Transport-Security', b'max-age=15724800'), (b'Onion-Location', b'https://archivep75mbjunhxc6x4j5mwjmomyxb573v42baldlqu56ruil2oiad.onion/download/mbid-0a91eab7-f566-4dd2-93b9-8b69a3f0f891/mbid-0a91eab7-f566-4dd2-93b9-8b69a3f0f891-41978780364.jpg'), (b'Content-Security-Policy', b"report-uri https://archive.org/services/csp-report; default-src *; img-src * data: blob:; object-src 'none'; media-src * blob:; connect-src * data:; style-src 'unsafe-inline' https://archive.org/ https://archive.org https://esm.archive.org/ https://esm.ext.archive.org/ https://offshoot.prod.archive.org/ https://av.archive.org/css/ https://av.dev.archive.org/css/ https://accounts.google.com/gsi/ https://synerg.adp.com/; script-src 'nonce-5876b44e2d9aa32e23412862333be712' https://archive.org/includes/ https://archive.org/includes/ https://archive.org/components/ https://archive.org/components/ https://archive.org/v/ https://archive.org/v/ https://archive.org/upload/app/ https://archive.org/offshoot_assets/ https://archive.org/offshoot_assets/ https://esm.archive.org/ https://esm.ext.archive.org/ https://polyfill.archive.org/v3/polyfill.min.js https://offshoot.prod.archive.org/ https://av.archive.org/ https://av.dev.archive.org/ https://openlibrary.org/query.json https://emularity-engine.ux-b.archive.org/ https://emularity-config.ux-b.archive.org/ https://emularity-bios.ux-b.archive.org/ https://archive.org/services/emularity/ https://archive.org/services/emularity/ 'wasm-unsafe-eval' 'sha256-CoX53XgCdkM1zegYEEpMUeYIZnv663inNm8bQv2VRbM=' https://accounts.google.com/gsi/ https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/ https://workforcenow.adp.com/ https://synerg.adp.com/ https://apollo.archive.org"), (b'Referrer-Policy', b'no-referrer-when-downgrade')])
+[2025-08-13 12:10:32,338] INFO - HTTP Request: GET https://archive.org/download/mbid-0a91eab7-f566-4dd2-93b9-8b69a3f0f891/mbid-0a91eab7-f566-4dd2-93b9-8b69a3f0f891-41978780364.jpg "HTTP/1.1 302 Found"
+[2025-08-13 12:10:32,340] DEBUG - receive_response_body.started request=<Request [b'GET']>
+[2025-08-13 12:10:32,340] DEBUG - receive_response_body.complete
+[2025-08-13 12:10:32,340] DEBUG - response_closed.started
+[2025-08-13 12:10:32,341] DEBUG - response_closed.complete
+[2025-08-13 12:10:32,342] DEBUG - connect_tcp.started host='dn721201.ca.archive.org' port=443 local_address=None timeout=5.0 socket_options=None
+[2025-08-13 12:10:32,557] DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7f4cfcc46960>
+[2025-08-13 12:10:32,557] DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7f4cfce293d0> server_hostname='dn721201.ca.archive.org' timeout=5.0
+[2025-08-13 12:10:32,747] DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7f4cfcc47aa0>
+[2025-08-13 12:10:32,748] DEBUG - send_request_headers.started request=<Request [b'GET']>
+[2025-08-13 12:10:32,749] DEBUG - send_request_headers.complete
+[2025-08-13 12:10:32,749] DEBUG - send_request_body.started request=<Request [b'GET']>
+[2025-08-13 12:10:32,749] DEBUG - send_request_body.complete
+[2025-08-13 12:10:32,749] DEBUG - receive_response_headers.started request=<Request [b'GET']>
+[2025-08-13 12:10:33,467] DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'nginx'), (b'Date', b'Wed, 13 Aug 2025 09:10:33 GMT'), (b'Content-Type', b'image/jpeg'), (b'Content-Length', b'173785'), (b'Last-Modified', b'Thu, 15 May 2025 13:45:11 GMT'), (b'Connection', b'keep-alive'), (b'ETag', b'"6825efe7-2a6d9"'), (b'access-control-allow-credentials', b'true'), (b'access-control-allow-headers', b'Accept-Encoding,Accept-Language,Authorization,Baggage,Cache-Control,Content-Length,Content-Range,DNT,Pragma,Range,Sentry-Trace,X-Requested-With'), (b'access-control-allow-origin', b'*'), (b'Accept-Ranges', b'bytes')])
+[2025-08-13 12:10:33,468] INFO - HTTP Request: GET https://dn721201.ca.archive.org/0/items/mbid-0a91eab7-f566-4dd2-93b9-8b69a3f0f891/mbid-0a91eab7-f566-4dd2-93b9-8b69a3f0f891-41978780364.jpg "HTTP/1.1 200 OK"
+[2025-08-13 12:10:33,470] DEBUG - receive_response_body.started request=<Request [b'GET']>
+[2025-08-13 12:10:35,408] DEBUG - receive_response_body.complete
+[2025-08-13 12:10:35,409] DEBUG - response_closed.started
+[2025-08-13 12:10:35,409] DEBUG - response_closed.complete
+[2025-08-13 12:10:35,415] DEBUG - close.started
+[2025-08-13 12:10:35,416] DEBUG - close.complete
+[2025-08-13 12:10:35,416] DEBUG - close.started
+[2025-08-13 12:10:35,417] DEBUG - close.complete
+[2025-08-13 12:10:35,417] DEBUG - close.started
+[2025-08-13 12:10:35,418] DEBUG - close.complete
+[2025-08-13 12:10:37,076] DEBUG - Using selector: EpollSelector
+[2025-08-13 12:10:49,530] DEBUG - subprocess.call(['ffmpeg', '-y', '-f', 'mp3', '-i', '/home/lima148/Documents/Scripts/Python/MusicTagEditor/testFolder/1.mp3', '-acodec', 'pcm_s16le', '-vn', '-f', 'wav', '-'])
+[2025-08-13 12:10:49,802] DEBUG - subprocess.call(['ffmpeg', '-y', '-f', 'wav', '-i', '/tmp/tmpjmlq2oze', '-f', 'mp3', '/tmp/tmpn7gf8_hb'])
+[2025-08-13 12:10:52,209] DEBUG - subprocess output: b'ffmpeg version n7.1.1 Copyright (c) 2000-2025 the FFmpeg developers'
+[2025-08-13 12:10:52,209] DEBUG - subprocess output: b'  built with gcc 15.1.1 (GCC) 20250425'
+[2025-08-13 12:10:52,209] DEBUG - subprocess output: b'  configuration: --prefix=/usr --disable-debug --disable-static --disable-stripping --enable-amf --enable-avisynth --enable-cuda-llvm --enable-lto --enable-fontconfig --enable-frei0r --enable-gmp --enable-gnutls --enable-gpl --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libdav1d --enable-libdrm --enable-libdvdnav --enable-libdvdread --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgsm --enable-libharfbuzz --enable-libiec61883 --enable-libjack --enable-libjxl --enable-libmodplug --enable-libmp3lame --enable-libopencore_amrnb --enable-libopencore_amrwb --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libplacebo --enable-libpulse --enable-librav1e --enable-librsvg --enable-librubberband --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libv4l2 --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpl --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxcb --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq --enable-nvdec --enable-nvenc --enable-opencl --enable-opengl --enable-shared --enable-vapoursynth --enable-version3 --enable-vulkan'
+[2025-08-13 12:10:52,209] DEBUG - subprocess output: b'  libavutil      59. 39.100 / 59. 39.100'
+[2025-08-13 12:10:52,209] DEBUG - subprocess output: b'  libavcodec     61. 19.101 / 61. 19.101'
+[2025-08-13 12:10:52,209] DEBUG - subprocess output: b'  libavformat    61.  7.100 / 61.  7.100'
+[2025-08-13 12:10:52,209] DEBUG - subprocess output: b'  libavdevice    61.  3.100 / 61.  3.100'
+[2025-08-13 12:10:52,209] DEBUG - subprocess output: b'  libavfilter    10.  4.100 / 10.  4.100'
+[2025-08-13 12:10:52,209] DEBUG - subprocess output: b'  libswscale      8.  3.100 /  8.  3.100'
+[2025-08-13 12:10:52,209] DEBUG - subprocess output: b'  libswresample   5.  3.100 /  5.  3.100'
+[2025-08-13 12:10:52,209] DEBUG - subprocess output: b'  libpostproc    58.  3.100 / 58.  3.100'
+[2025-08-13 12:10:52,209] DEBUG - subprocess output: b'[aist#0:0/pcm_s16le @ 0x56423babf640] Guessed Channel Layout: stereo'
+[2025-08-13 12:10:52,209] DEBUG - subprocess output: b"Input #0, wav, from '/tmp/tmpjmlq2oze':"
+[2025-08-13 12:10:52,209] DEBUG - subprocess output: b'  Duration: 00:03:31.72, bitrate: 1411 kb/s'
+[2025-08-13 12:10:52,209] DEBUG - subprocess output: b'  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 44100 Hz, stereo, s16, 1411 kb/s'
+[2025-08-13 12:10:52,209] DEBUG - subprocess output: b'Stream mapping:'
+[2025-08-13 12:10:52,209] DEBUG - subprocess output: b'  Stream #0:0 -> #0:0 (pcm_s16le (native) -> mp3 (libmp3lame))'
+[2025-08-13 12:10:52,210] DEBUG - subprocess output: b'Press [q] to stop, [?] for help'
+[2025-08-13 12:10:52,210] DEBUG - subprocess output: b"Output #0, mp3, to '/tmp/tmpn7gf8_hb':"
+[2025-08-13 12:10:52,210] DEBUG - subprocess output: b'  Metadata:'
+[2025-08-13 12:10:52,210] DEBUG - subprocess output: b'    TSSE            : Lavf61.7.100'
+[2025-08-13 12:10:52,210] DEBUG - subprocess output: b'  Stream #0:0: Audio: mp3, 44100 Hz, stereo, s16p'
+[2025-08-13 12:10:52,210] DEBUG - subprocess output: b'      Metadata:'
+[2025-08-13 12:10:52,210] DEBUG - subprocess output: b'        encoder         : Lavc61.19.101 libmp3lame'
+[2025-08-13 12:10:52,210] DEBUG - subprocess output: b'size=     512KiB time=00:00:45.42 bitrate=  92.3kbits/s speed=90.8x'
+[2025-08-13 12:10:52,210] DEBUG - subprocess output: b'size=    1280KiB time=00:01:29.49 bitrate= 117.2kbits/s speed=89.5x'
+[2025-08-13 12:10:52,210] DEBUG - subprocess output: b'size=    2048KiB time=00:02:13.77 bitrate= 125.4kbits/s speed=89.2x'
+[2025-08-13 12:10:52,210] DEBUG - subprocess output: b'size=    2560KiB time=00:02:58.86 bitrate= 117.3kbits/s speed=89.4x'
+[2025-08-13 12:10:52,210] DEBUG - subprocess output: b'[out#0/mp3 @ 0x56423babf7c0] video:0KiB audio:3309KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.007438%'
+[2025-08-13 12:10:52,210] DEBUG - subprocess output: b'size=    3309KiB time=00:03:31.72 bitrate= 128.0kbits/s speed=90.6x'

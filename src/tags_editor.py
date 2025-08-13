@@ -14,14 +14,14 @@ import subprocess
 import shutil
 import os
 
-import Parse
+import parse
 import json
 import asyncio
 
 with open("config.json", "r") as f:
     cfg = json.load(f)
 
-track_info, album_info, release_id = asyncio.run(Parse.main())
+track_info, album_info, release_id = asyncio.run(parse.main())
 print(track_info, album_info)
 
 '''
