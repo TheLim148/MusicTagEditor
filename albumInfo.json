@@ -1,0 +1,309 @@
+{
+  "packaging": "None",
+  "asin": null,
+  "quality": "normal",
+  "date": "2012-02-24",
+  "text-representation": {
+    "language": "mul",
+    "script": "Cyrl"
+  },
+  "release-events": [
+    {
+      "date": "2012-02-24",
+      "area": {
+        "iso-3166-1-codes": [
+          "XW"
+        ],
+        "name": "[Worldwide]",
+        "id": "525d4e18-3d00-31b9-a58b-a146a916de8f",
+        "sort-name": "[Worldwide]",
+        "disambiguation": "",
+        "type-id": null,
+        "type": null
+      }
+    }
+  ],
+  "status-id": "4e304316-386d-3409-af2e-78857eec5cfe",
+  "packaging-id": "119eba76-b343-3e02-a292-f0f00644bb9b",
+  "id": "0a91eab7-f566-4dd2-93b9-8b69a3f0f891",
+  "status": "Official",
+  "title": "Смирись и расслабься",
+  "disambiguation": "",
+  "cover-art-archive": {
+    "back": false,
+    "front": true,
+    "artwork": true,
+    "darkened": false,
+    "count": 1
+  },
+  "country": "XW",
+  "barcode": "191061114444",
+  "media": [
+    {
+      "track-offset": 0,
+      "format": "Digital Media",
+      "position": 1,
+      "title": "",
+      "format-id": "907a28d9-b3b2-3ef6-89a8-7b18d91d4794",
+      "id": "73e75447-a62c-386e-acf5-7c4a47bbe2ba",
+      "tracks": [
+        {
+          "title": "Отель Кооператор",
+          "length": 235453,
+          "id": "f66a987b-ae83-4b89-b18c-5c9a61ec5271",
+          "position": 1,
+          "number": "1",
+          "recording": {
+            "title": "Отель Кооператор",
+            "video": false,
+            "length": 235453,
+            "id": "427be260-cc72-4927-89c8-f27def36d20b",
+            "first-release-date": "2012-02-24",
+            "disambiguation": ""
+          }
+        },
+        {
+          "title": "Фанк",
+          "id": "4d2313b9-dde5-49ea-a74a-3e070b0a28a8",
+          "length": 193413,
+          "recording": {
+            "video": false,
+            "title": "Фанк",
+            "id": "41a8fce0-12a6-4a7c-8c79-66db5e968d74",
+            "length": 193413,
+            "first-release-date": "2012-02-24",
+            "disambiguation": ""
+          },
+          "position": 2,
+          "number": "2"
+        },
+        {
+          "title": "Песня для девочек",
+          "length": 254787,
+          "id": "aab4dba5-4849-43d0-a276-f005658c8a68",
+          "position": 3,
+          "number": "3",
+          "recording": {
+            "first-release-date": "2012-02-24",
+            "disambiguation": "",
+            "video": false,
+            "title": "Песня для девочек",
+            "length": 254787,
+            "id": "923bd451-026a-40fa-bffb-75d6e2bba720"
+          }
+        },
+        {
+          "recording": {
+            "title": "Рустем",
+            "video": false,
+            "length": 211720,
+            "id": "200f0b3f-5001-4b86-a95d-75bec48c293b",
+            "first-release-date": "2012-02-24",
+            "disambiguation": ""
+          },
+          "position": 4,
+          "number": "4",
+          "id": "e6f4f1ff-73f5-4e36-9711-4df6188ed955",
+          "length": 211720,
+          "title": "Рустем"
+        },
+        {
+          "id": "39353849-b653-4aff-8517-d8fee630f57c",
+          "length": 142293,
+          "title": "45 лет",
+          "recording": {
+            "title": "45 лет",
+            "video": false,
+            "id": "3a389c03-2374-4232-b572-2bfddee43cc6",
+            "length": 142293,
+            "first-release-date": "2012-02-24",
+            "disambiguation": ""
+          },
+          "position": 5,
+          "number": "5"
+        },
+        {
+          "id": "e90fa208-2999-4de2-9750-7afbe7c379c6",
+          "length": 191400,
+          "title": "Всё решено",
+          "recording": {
+            "disambiguation": "",
+            "first-release-date": "2012-02-24",
+            "id": "cc5fb8c6-efca-42aa-96b7-1beefd57ab42",
+            "length": 191400,
+            "title": "Всё решено",
+            "video": false
+          },
+          "position": 6,
+          "number": "6"
+        },
+        {
+          "id": "98dc0834-3b1e-42e4-ae07-100c669756a1",
+          "length": 181720,
+          "title": "Кайен",
+          "recording": {
+            "id": "c248ceea-2517-4ad5-923e-c22c1a1f889c",
+            "length": 181720,
+            "title": "Кайен",
+            "video": false,
+            "disambiguation": "",
+            "first-release-date": "2012-02-24"
+          },
+          "position": 7,
+          "number": "7"
+        },
+        {
+          "title": "Он постоянно",
+          "id": "8c6f27e2-b0a6-4887-a7d0-17afea54a563",
+          "length": 243320,
+          "recording": {
+            "length": 243320,
+            "id": "0dac0424-f7bb-44fe-8797-cdefcf17afe4",
+            "video": false,
+            "title": "Он постоянно",
+            "disambiguation": "",
+            "first-release-date": "2012-02-24"
+          },
+          "position": 8,
+          "number": "8"
+        },
+        {
+          "position": 9,
+          "number": "9",
+          "recording": {
+            "first-release-date": "2012-02-24",
+            "disambiguation": "",
+            "title": "Лишь однажды",
+            "video": false,
+            "id": "ea4266e1-16f6-4cdf-9cf1-a06fcdfbcc79",
+            "length": 172547
+          },
+          "title": "Лишь однажды",
+          "length": 172547,
+          "id": "9e057013-a193-410f-bfd4-e2a826e992a3"
+        },
+        {
+          "id": "a6773c45-420c-481a-b3be-bc89f95272f6",
+          "length": 208133,
+          "title": "Наше лето",
+          "recording": {
+            "video": false,
+            "title": "Наше лето",
+            "id": "b4ff2073-3b65-428b-b620-34e54d78cf7d",
+            "length": 208133,
+            "first-release-date": "2012-02-24",
+            "disambiguation": ""
+          },
+          "number": "10",
+          "position": 10
+        },
+        {
+          "title": "Русский рок",
+          "length": 193787,
+          "id": "6ef6c899-dc64-4993-80d6-be952c68354b",
+          "position": 11,
+          "number": "11",
+          "recording": {
+            "video": false,
+            "title": "Русский рок",
+            "length": 193787,
+            "id": "be02785a-baf4-47a5-9ddf-cecf13152161",
+            "first-release-date": "2012-02-24",
+            "disambiguation": ""
+          }
+        },
+        {
+          "title": "Серёжа",
+          "id": "4a05236d-fded-491e-ace7-ab622d86a217",
+          "length": 230800,
+          "recording": {
+            "first-release-date": "2012-02-24",
+            "disambiguation": "",
+            "video": false,
+            "title": "Серёжа",
+            "length": 230000,
+            "id": "1f0c1ae9-05b3-48d6-9025-401dc1988700"
+          },
+          "number": "12",
+          "position": 12
+        },
+        {
+          "title": "Первомай",
+          "id": "4fa63d89-e7c4-47eb-85d2-5ce5b2a94e7e",
+          "length": 215667,
+          "recording": {
+            "first-release-date": "2012-02-24",
+            "disambiguation": "",
+            "video": false,
+            "title": "Первомай",
+            "length": 215667,
+            "id": "27e6002c-66ee-4972-a9a8-d1c0c60c6b85"
+          },
+          "number": "13",
+          "position": 13
+        },
+        {
+          "length": 161787,
+          "id": "d1076fef-2764-41b3-9551-75bd8b840c30",
+          "title": "Я бью женщин и детей",
+          "number": "14",
+          "position": 14,
+          "recording": {
+            "id": "9b9d0b01-4f8a-407a-b03a-af7edf8f643c",
+            "length": 161787,
+            "title": "Я бью женщин и детей",
+            "video": false,
+            "disambiguation": "",
+            "first-release-date": "2012-02-24"
+          }
+        },
+        {
+          "position": 15,
+          "number": "15",
+          "recording": {
+            "disambiguation": "",
+            "first-release-date": "2012-02-24",
+            "id": "9848e15f-e095-487c-aa3c-5bf44c7d410b",
+            "length": 319120,
+            "title": "Gay Porn",
+            "video": false
+          },
+          "title": "Gay Porn",
+          "length": 319120,
+          "id": "f7968f27-132e-44ca-a099-42778fcddb97"
+        },
+        {
+          "number": "16",
+          "position": 16,
+          "recording": {
+            "first-release-date": "2012-02-24",
+            "disambiguation": "",
+            "title": "Так гріє",
+            "video": false,
+            "id": "e752ee0c-9070-4b04-a454-758814073a6b",
+            "length": 278587
+          },
+          "length": 278587,
+          "id": "e04dc697-9dd9-4628-abab-938bb149d8db",
+          "title": "Так гріє"
+        },
+        {
+          "title": "Дешёвые драмы",
+          "id": "1b4233cd-c84f-4a55-a169-d2958d6ddb66",
+          "length": 227653,
+          "recording": {
+            "id": "f7a67e03-ab88-49eb-bfba-7ac17145363a",
+            "length": 227653,
+            "title": "Дешёвые драмы",
+            "video": false,
+            "disambiguation": "",
+            "first-release-date": "2012-02-24"
+          },
+          "number": "17",
+          "position": 17
+        }
+      ],
+      "track-count": 17
+    }
+  ]
+}

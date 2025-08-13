@@ -27,7 +27,7 @@ def start_tor():
         sleep(5)
 
 def send_newnym():
-    COOKIE = Path("~/.tor/control_auth_cookie")
+    COOKIE = Path("/home/lima148/.tor/control_auth_cookie")
     cookie_hex = COOKIE.read_bytes().hex()
     with socket.create_connection(("127.0.0.1", 9051)) as s:
         msg = f'AUTHENTICATE {cookie_hex}\r\nSIGNAL NEWNYM\r\nQUIT\r\n'

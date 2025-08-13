@@ -1,0 +1,127 @@
+{
+  "video": false,
+  "title": "Рустем",
+  "artist-credit": [
+    {
+      "joinphrase": "",
+      "artist": {
+        "tags": [],
+        "name": "Валентин Стрыкало",
+        "id": "e0dafd96-7103-4d3a-839e-0db1af4e743c",
+        "sort-name": "Strikalo Valentine",
+        "disambiguation": "",
+        "country": "UA",
+        "type-id": "e431f5f6-b5d2-343d-8b36-72607fffb74b",
+        "type": "Group"
+      },
+      "name": "Валентин Стрыкало"
+    }
+  ],
+  "id": "200f0b3f-5001-4b86-a95d-75bec48c293b",
+  "tags": [],
+  "length": 211720,
+  "first-release-date": "2012-02-24",
+  "releases": [
+    {
+      "date": "2012-02-24",
+      "text-representation": {
+        "language": "mul",
+        "script": "Cyrl"
+      },
+      "release-events": [
+        {
+          "date": "2012-02-24",
+          "area": {
+            "type-id": null,
+            "disambiguation": "",
+            "type": null,
+            "name": "[Worldwide]",
+            "iso-3166-1-codes": [
+              "XW"
+            ],
+            "sort-name": "[Worldwide]",
+            "id": "525d4e18-3d00-31b9-a58b-a146a916de8f"
+          }
+        }
+      ],
+      "artist-credit": [
+        {
+          "name": "Валентин Стрыкало",
+          "artist": {
+            "disambiguation": "",
+            "country": "UA",
+            "type-id": "e431f5f6-b5d2-343d-8b36-72607fffb74b",
+            "type": "Group",
+            "name": "Валентин Стрыкало",
+            "tags": [],
+            "id": "e0dafd96-7103-4d3a-839e-0db1af4e743c",
+            "sort-name": "Strikalo Valentine"
+          },
+          "joinphrase": ""
+        }
+      ],
+      "quality": "normal",
+      "packaging": "None",
+      "barcode": "191061114444",
+      "disambiguation": "",
+      "country": "XW",
+      "id": "0a91eab7-f566-4dd2-93b9-8b69a3f0f891",
+      "title": "Смирись и расслабься",
+      "status": "Official",
+      "status-id": "4e304316-386d-3409-af2e-78857eec5cfe",
+      "packaging-id": "119eba76-b343-3e02-a292-f0f00644bb9b",
+      "tags": []
+    },
+    {
+      "artist-credit": [
+        {
+          "joinphrase": "",
+          "artist": {
+            "sort-name": "Strikalo Valentine",
+            "id": "e0dafd96-7103-4d3a-839e-0db1af4e743c",
+            "name": "Валентин Стрыкало",
+            "tags": [],
+            "type": "Group",
+            "type-id": "e431f5f6-b5d2-343d-8b36-72607fffb74b",
+            "country": "UA",
+            "disambiguation": ""
+          },
+          "name": "Валентин Стрыкало"
+        }
+      ],
+      "quality": "normal",
+      "packaging": null,
+      "date": "2012-02",
+      "text-representation": {
+        "script": "Cyrl",
+        "language": "rus"
+      },
+      "release-events": [
+        {
+          "area": {
+            "type-id": null,
+            "disambiguation": "",
+            "type": null,
+            "name": "Ukraine",
+            "iso-3166-1-codes": [
+              "UA"
+            ],
+            "sort-name": "Ukraine",
+            "id": "904768d0-61ca-3c40-93ac-93adc36fef4b"
+          },
+          "date": "2012-02"
+        }
+      ],
+      "id": "e8abb752-d176-49a0-bfe5-0281251d1554",
+      "title": "Смирись и расслабься!",
+      "status": "Official",
+      "status-id": "4e304316-386d-3409-af2e-78857eec5cfe",
+      "packaging-id": null,
+      "tags": [],
+      "barcode": null,
+      "disambiguation": "",
+      "country": "UA"
+    }
+  ],
+  "disambiguation": ""
+}

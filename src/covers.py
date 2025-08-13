@@ -1,6 +1,6 @@
+from pathlib import Path
 import httpx
 import os
-from pathlib import Path
 
 async def get_cover_url(release_id):
     url = f"https://coverartarchive.org/release/{release_id}"
@@ -18,9 +18,9 @@ async def get_cover_url(release_id):
         print(f"Error: {e}")
     return None
 
-async def download_image(url, path):
+async def download_image(url, path_to_save):
     async with httpx.AsyncClient(follow_redirects=True) as client:
         response = await client.get(url)
         response.raise_for_status()
-        with open (Path(os.path.expanduser(path)), "wb") as f:
+        with open (Path(os.path.expanduser(path_to_save)), "wb") as f:
             f.write(response.content)

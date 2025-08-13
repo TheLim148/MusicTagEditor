@@ -1,5 +1,6 @@
 import parsers as parse
 import httpx
+import json
 
 async def get_musicbrainz_data(recording_id):
     url = f"https://musicbrainz.org/ws/2/recording/{recording_id}"
@@ -22,6 +23,10 @@ async def get_musicbrainz_data(recording_id):
             response = await client.get(url, params=params, headers=headers)
             response.raise_for_status()
             data = response.json()
+
+            # with open("trackInfo.json", "w", encoding="utf-8") as f:
+                # json.dump(data, f, indent=2, ensure_ascii=False)
+
             print("Информация о треке была получена")
             return parse.parse_track_info(data)
         except httpx.HTTPStatusError as e:
@@ -52,6 +57,10 @@ async def get_track_number_in_release(release_id, recording_id):
             response = await client.get(url, params=params, headers=headers)
             response.raise_for_status()
             data = response.json()
+
+            # with open("albumInfo.json", "w", encoding="utf-8") as f:
+                # json.dump(data, f, indent=2, ensure_ascii=False)
+
             print("Информация об альбоме была получена")
             return parse.parse_album_info(data, release_id, recording_id)
         except httpx.HTTPStatusError as e:

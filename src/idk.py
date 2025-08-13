@@ -5,9 +5,10 @@ import acoustid
 import asyncio
 import logging
 
-import tor_utils as tor
 import musicbrainz_api as mb_api
+import tor_utils as tor
 import covers
+import parsers as parse
 
 API_KEY = "hv3SsHefpw"
 USER_API_KEY = "FnlllFTowF"
@@ -44,7 +45,7 @@ async def main():
     clear_terminal()
     tor.start_tor()
 
-    match = next(acoustid.match(API_KEY, os.path.join("testFolder", "1.mp3")), "")
+    match = next(acoustid.match(API_KEY, os.path.join("test", "1.mp3")), "")
     if match:
         score, recording_id, title, artist = match
     else:
@@ -83,13 +84,27 @@ async def main():
     album_info = await mb_api.get_track_number_in_release(release_id, recording_id)
     cover_url = await covers.get_cover_url(release_id)
     await covers.download_image(cover_url, cfg["covers_path"] + f"{release_id}.jpg")
-    # with open("trackInfo1.json", "w", encoding="utf-8") as f:
-        # json.dump(track_info, f, indent=2, ensure_ascii=False)
-
-    # with open("albumInfo1.json", "w", encoding="utf-8") as f:
-        # json.dump(album_info, f, indent=2, ensure_ascii=False)
 
     return track_info, album_info, release_id
 
-if __name__ == "__main__":
-    asyncio.run(main())
+async def dev_main():
+    with open("trackInfo.json", "r", encoding="utf-8") as f:
+        data = json.load(f)
+        track_info = parse.parse_track_info(data)
+    
+    release_id = track_info[0]["release_id"]
+
+    match = next(acoustid.match(API_KEY, os.path.join("test", "1.mp3")), "")
+    if match:
+        score, recording_id, title, artist = match
+    else:
+        raise ValueError("Совпадений не найдено")
+
+    with open("albumInfo.json", "r", encoding="utf-8") as f:
+        data = json.load(f)
+        album_info = parse.parse_album_info(data, release_id, recording_id)
+
+    return track_info, album_info, release_id
+
+# if __name__ == "__main__":
+#     asyncio.run(main())
