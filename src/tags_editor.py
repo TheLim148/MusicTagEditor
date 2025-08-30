@@ -15,41 +15,10 @@ import asyncio
 import json
 import os
 
-import idk
+import requests_and_stuff as ras
 
 with open("config.json", "r") as f:
     cfg = json.load(f)
-
-track_info, album_info, release_id = asyncio.run(idk.dev_main())
-print(track_info, album_info)
-
-'''
-TRACK_INFO
-"release_id"
-"album_title"
-"year"
-"artist_name"
-"tags"
-"length"
-"song_title"
-
-ALBUM_INFO
-"track_number"
-"track_title"
-"medium_title"
-"release_id"
-'''
-
-tags_to_edit = {
-    "title": track_info[0]["song_title"],
-    "artist": track_info[0]["artist_name"],
-    "album": track_info[0]["album_title"],
-    "date": track_info[0]["year"],
-    "genre": "Панк-рок, камеди-рок, альтернативный рок, поп-панк",
-    "tracknumber": album_info[0]["track_number"],
-    "musicbrainz_releasetrackid": album_info[0]["release_id"],
-    "length": str(track_info[0]["length"])
-}
 
 def encode_with_ffmpeg(input_file, output_file, cover_path=None):
     input_file  = str(Path(input_file))
@@ -102,7 +71,7 @@ def encode_with_ffmpeg(input_file, output_file, cover_path=None):
 #         audio.export(f"{dir_to}/{file}.ogg", format = "opus")
 #         edit_opus_tags(f"{dir_to}/", f"{file}.ogg", tags_to_edit)
 
-def edit_mp3_tags(input_dir, audioname, tags_to_edit):
+def edit_mp3_tags(input_dir, audioname, tags_to_edit, release_id):
     audio = EasyID3(input_dir + audioname)
 
     for tag_name, tag_value in tags_to_edit.items():
@@ -120,34 +89,58 @@ def edit_mp3_tags(input_dir, audioname, tags_to_edit):
     audio.tags.add(apic)
     audio.save()
 
-def from_raw_mp3_to_clean(dir_from, dir_to):
-    files = sorted(os.listdir(dir_from))
-    for file in files:
-        audio = AudioSegment.from_mp3(os.path.join(dir_from, file))
+def from_raw_mp3_to_clean(file_name, dir_from, dir_to, tags_to_edit, release_id):
+    audio = AudioSegment.from_mp3(os.path.join(dir_from, file_name))
 
-        clean_name = f"{file.replace('.mp3', '')}_clean.mp3"
+    clean_name = f"{file_name.replace('.mp3', '')}_clean.mp3"
 
-        audio.export(os.path.join(dir_to, clean_name), format="mp3")
-        edit_mp3_tags(f"{dir_to}/", f"{clean_name}", tags_to_edit)
+    audio.export(os.path.join(dir_to, clean_name), format="mp3")
+    edit_mp3_tags(f"{dir_to}/", f"{clean_name}", tags_to_edit, release_id)
     
-        new_name = f"{tags_to_edit['title']} - {tags_to_edit['artist']}.mp3"
+    new_name = f"{tags_to_edit['title']} - {tags_to_edit['artist']}.mp3"
         
-        old_path = f"{dir_to}/{clean_name}"
-        new_path = f"{dir_to}/{new_name}"
+    old_path = f"{dir_to}/{clean_name}"
+    new_path = f"{dir_to}/{new_name}"
         
-        os.rename(old_path, new_path)
-        try:
-            encode_with_ffmpeg(
-                input_file = new_path,
-                output_file = new_path,
-            )
-        except Exception as e:
-            print(f"Error: {e}")
+    os.rename(old_path, new_path)
+    try:
+        encode_with_ffmpeg(
+            input_file = new_path,
+            output_file = new_path,
+        )
+    except Exception as e:
+        print(f"Error: {e}")
+
+def build_tags(track_info, album_info):
+    return {
+        "title": track_info[0]["song_title"],
+        "artist": track_info[0]["artist_name"],
+        "album": track_info[0]["album_title"],
+        "date": track_info[0]["year"],
+        "genre": "Панк-рок, камеди-рок, альтернативный рок, поп-панк",
+        "tracknumber": album_info[0]["track_number"],
+        "musicbrainz_releasetrackid": album_info[0]["release_id"],
+        "length": str(track_info[0]["length"])
+    }
+
+async def process_one(file_name, dir_from, dir_to):
+    # track_info, album_info, release_id = await ras.dev_main()
+    track_info, album_info, release_id = await ras.main(dir_from, file_name)
+
+    tags_to_edit = build_tags(track_info, album_info)
+
+    await asyncio.to_thread(from_raw_mp3_to_clean, file_name, dir_from, dir_to, tags_to_edit, release_id)
 
 async def main():
-    dir_from = input("Введите исходную директорию: ")
-    dir_to = input("Введите конечную директорию: ")
-    from_raw_mp3_to_clean(dir_from, dir_to)
+    # dir_from = input("Введите исходную директорию: ")
+    # dir_to = input("Введите конечную директорию: ")
 
-if __name__ == "__main__":
-    asyncio.run(main())
+    dir_from = "/home/lima148/Documents/Scripts/Python/MusicTagEditor/test/"
+    dir_to = "/home/lima148/Documents/Scripts/Python/MusicTagEditor/mp3/"
+
+    files = sorted(os.listdir(dir_from))
+    for file_name in files:
+        await process_one(file_name, dir_from, dir_to)
+
+# if __name__ == "__main__":
+    # asyncio.run(main())

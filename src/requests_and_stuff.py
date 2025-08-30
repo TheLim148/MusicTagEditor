@@ -22,7 +22,7 @@ JSON_TEMPLATE = '''
                     "coverPath": "",
                     "tracks": [
                         {
-                            "title": "", "trackno": , "lenght": , "fingerprint": ""
+                            "title": "", "trackno": , "length": , "fingerprint": ""
                         }
                     ]
                 }
@@ -39,13 +39,13 @@ logging.basicConfig(
 def clear_terminal():
     print('\033[2J\033[H', end='')
 
-async def main():
+async def main(dir_from, file_name):
     with open("config.json", "r") as f:
         cfg = json.load(f)
     clear_terminal()
     tor.start_tor()
 
-    match = next(acoustid.match(API_KEY, os.path.join("test", "1.mp3")), "")
+    match = next(acoustid.match(API_KEY, os.path.join(dir_from, file_name)), "")
     if match:
         score, recording_id, title, artist = match
     else:
@@ -56,10 +56,10 @@ async def main():
 
     attempts = 0
     newnym_attempts = 0
-    
+
     while attempts < max_attempts:
         track_info = await mb_api.get_musicbrainz_data(recording_id)
-        
+
         if isinstance(track_info, dict) and "error" in track_info:
             attempts += 1
             print(f"Попытка {attempts}/{max_attempts} | {track_info}")
@@ -85,6 +85,23 @@ async def main():
     cover_url = await covers.get_cover_url(release_id)
     await covers.download_image(cover_url, cfg["covers_path"] + f"{release_id}.jpg")
 
+    '''
+    TRACK_INFO
+    "release_id"
+    "album_title"
+    "year"
+    "artist_name"
+    "tags"
+    "length"
+    "song_title"
+
+    ALBUM_INFO
+    "track_number"
+    "track_title"
+    "medium_title"
+    "release_id"
+    '''
+    
     return track_info, album_info, release_id
 
 async def dev_main():

@@ -34,6 +34,8 @@ def parse_album_info(data, release_id, recording_id):
                 })
     return results
 
+### --- ###
+
 def printData(dataFile):
     with open(dataFile, "r", encoding="utf-8") as f:
         data = json.load(f)
