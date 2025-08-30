@@ -122,6 +122,3 @@ async def dev_main():
         album_info = parse.parse_album_info(data, release_id, recording_id)
 
     return track_info, album_info, release_id
-
-# if __name__ == "__main__":
-#     asyncio.run(main())
