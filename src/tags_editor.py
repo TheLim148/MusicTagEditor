@@ -25,27 +25,43 @@ def encode_with_ffmpeg(input_file, output_file, cover_path=None):
     output_file = str(Path(output_file))
     temp_output = str(Path(output_file).with_name("temp_encoded.mp3"))
 
-    cmd = ["ffmpeg", "-y", "-i", input_file]
+    # cmd = ["ffmpeg", "-y", "-i", input_file]
 
-    if cover_path:
-        cover_path = str(Path(cover_path))
-        cmd += [
-            "-i", cover_path,
-            "-map", "0:a", "-map", "1:v",
-            "-c:a", "libmp3lame", "-b:a", "96k",
-            "-c:v", "copy",
-            "-id3v2_version", "3",
-            "-metadata:s:v", "title=Album cover",
-            "-metadata:s:v", "comment=Cover (front)",
-        ]
-    else:
-        cmd += [
-            "-map", "0:a",
-            "-c:a", "libmp3lame", "-b:a", "96k",
-            "-id3v2_version", "3",
-        ]
+    # if cover_path:
+    #     cover_path = str(Path(cover_path))
+    #     cmd += [
+    #         "-i", cover_path,
+    #         "-map", "0:a", "-map", "1:v",
+    #         "-c:a", "libmp3lame", "-b:a", "96k",
+    #         "-c:v", "copy",
+    #         "-id3v2_version", "3",
+    #         "-metadata:s:v", "title=Album cover",
+    #         "-metadata:s:v", "comment=Cover (front)",
+    #     ]
+    # else:
+    #     cmd += [
+    #         "-map", "0:a",
+    #         "-c:a", "libmp3lame", "-b:a", "96k",
+    #         "-id3v2_version", "3",
+    #     ]
 
-    cmd.append(temp_output)
+    cmd = [
+        "ffmpeg", "-y",
+        "-i", input_file,
+        # берём аудио и встроенную картинку из входа
+        "-map", "0:a", "-map", "0:v:0",
+        # кодируем аудио, картинку копируем как есть
+        "-c:a", "libmp3lame", "-b:a", "96k",
+        "-c:v", "copy",
+        # обязательно пометить как attached_pic
+        "-disposition:v:0", "attached_pic",
+        # теги и их формат
+        "-id3v2_version", "3",
+        "-map_metadata", "0",
+        temp_output
+    ]
+
+    # cmd.append(temp_output)
 
     subprocess.run(cmd, check=True)
 
